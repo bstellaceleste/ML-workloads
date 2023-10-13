@@ -1,0 +1,364 @@
+import random
+import numpy as np
+import scipy.ndimage
+from torch.utils.data import Dataset
+from torchvision import transforms
+import os
+from runtime.logging import mllog_event,get_dllogger, mllog_start, mllog_end, mllog_event, mlperf_submission_log, mlperf_run_param_log
+from runtime.arguments import PARSER
+import glob
+import time
+import random
+import subprocess
+
+import cProfile
+import pstats
+
+  
+#def measure_cpu_performance(function_name):
+   # command = f' perf stat -a sleep 5'
+   # subprocess.check_output(command, shell=True)
+def get_train_transforms():
+    
+    rand_flip = RandFlip()
+    
+    cast = Cast(types=(np.float32, np.uint8))
+    rand_scale = RandomBrightnessAugmentation(factor=0.3, prob=0.1)
+   
+
+    rand_noise = GaussianNoise(mean=0.0, std=0.1, prob=0.1)
+
+
+    train_transforms = transforms.Compose([rand_flip, cast, rand_scale, rand_noise])
+    return train_transforms
+
+
+
+
+class RandBalancedCrop1:
+    def __init__(self, patch_size, oversampling):
+        self.patch_size = patch_size
+        self.oversampling = oversampling
+
+    def __call__(self, data):
+        # Start capturing CPU usage using `perf`
+        perf_command = f'perf stat -p {str(os.getpid())} -e cpu-clock sleep 5' # Modify the perf command as per your requirements
+        
+
+        # mllog_start(key='RandCrop_start', value=data["image_name"], sync=True)
+
+        image, label = data["image"], data["label"]
+        perf_process = subprocess.Popen(perf_command, shell=True)
+
+        if random.random() < self.oversampling:
+            image, label, cords = self.rand_foreg_cropd(image, label)
+        else: 
+            image, label, cords = self._rand_crop(image, label)
+        data.update({"image": image, "label": label})
+        # Stop capturing CPU usage
+        perf_process.terminate()
+        perf_process.wait()
+
+        # mllog_end(key='RandCrop_end', value=data["image_name"], sync=True)
+
+        
+        # Parse and log the captured CPU usage data if required
+
+        return data
+
+
+
+import cProfile
+import pstats
+import random
+import io
+class RandBalancedCrop:
+    def __init__(self, patch_size, oversampling):
+        self.patch_size = patch_size
+        self.oversampling = oversampling
+
+    def __call__(self, data):
+        # mllog_start(key='RandCrop_start', value=data["image_name"], sync=True)
+        
+
+        image, label = data["image"], data["label"]
+        # mllog_event(key='Case image shape', value = data["image"].shape,sync=True )
+        #profiler = cProfile.Profile()
+        #profiler.enable()
+
+        if random.random() < self.oversampling:
+            image, label, cords = self.rand_foreg_cropd(image, label)
+        else:
+            image, label, cords = self._rand_crop(image, label)
+
+        data.update({"image": image, "label": label})
+        #profiler.disable()
+      
+
+        #profiler_stats = pstats.Stats(profiler)
+        #profiler_stats.sort_stats(pstats.SortKey.CUMULATIVE)
+        #profiler_stats.print_stats()
+
+        # mllog_end(key='RandCrop_end', value=data["image_name"], sync=True)
+        return data
+
+
+    @staticmethod
+    def randrange(max_range):
+        return 0 if max_range == 0 else random.randrange(max_range)
+
+    def get_cords(self, cord, idx):
+        return cord[idx], cord[idx] + self.patch_size[idx]
+
+    def _rand_crop(self, image, label):
+        ranges = [s - p for s, p in zip(image.shape[1:], self.patch_size)]
+        cord = [self.randrange(x) for x in ranges]
+        low_x, high_x = self.get_cords(cord, 0)
+        low_y, high_y = self.get_cords(cord, 1)
+        low_z, high_z = self.get_cords(cord, 2)
+        image = image[:, low_x:high_x, low_y:high_y, low_z:high_z]
+        label = label[:, low_x:high_x, low_y:high_y, low_z:high_z]
+        return image, label, [low_x, high_x, low_y, high_y, low_z, high_z]
+
+    def rand_foreg_cropd(self, image, label):
+        def adjust(foreg_slice, patch_size, label, idx):
+            diff = patch_size[idx - 1] - (foreg_slice[idx].stop - foreg_slice[idx].start)
+            sign = -1 if diff < 0 else 1
+            diff = abs(diff)
+            ladj = self.randrange(diff)
+            hadj = diff - ladj
+            low = max(0, foreg_slice[idx].start - sign * ladj)
+            high = min(label.shape[idx], foreg_slice[idx].stop + sign * hadj)
+            diff = patch_size[idx - 1] - (high - low)
+            if diff > 0 and low == 0:
+                high += diff
+            elif diff > 0:
+                low -= diff
+            return low, high
+
+        cl = np.random.choice(np.unique(label[label > 0]))
+        foreg_slices = scipy.ndimage.find_objects(scipy.ndimage.measurements.label(label==cl)[0])
+        foreg_slices = [x for x in foreg_slices if x is not None]
+        slice_volumes = [np.prod([s.stop - s.start for s in sl]) for sl in foreg_slices]
+        slice_idx = np.argsort(slice_volumes)[-2:]
+        foreg_slices = [foreg_slices[i] for i in slice_idx]
+        if not foreg_slices:
+            return self._rand_crop(image, label)
+        foreg_slice = foreg_slices[random.randrange(len(foreg_slices))]
+        low_x, high_x = adjust(foreg_slice, self.patch_size, label, 1)
+        low_y, high_y = adjust(foreg_slice, self.patch_size, label, 2)
+        low_z, high_z = adjust(foreg_slice, self.patch_size, label, 3)
+        image = image[:, low_x:high_x, low_y:high_y, low_z:high_z]
+        label = label[:, low_x:high_x, low_y:high_y, low_z:high_z]
+        return image, label, [low_x, high_x, low_y, high_y, low_z, high_z]
+
+
+
+
+
+
+class RandFlip:
+    def __init__(self):
+        self.axis = [1, 2, 3]
+        self.prob = 1 / len(self.axis)
+
+    def flip(self, data, axis):
+        data["image"] = np.flip(data["image"], axis=axis).copy()
+        data["label"] = np.flip(data["label"], axis=axis).copy()
+        return data
+
+   
+
+    def __call__(self, data):
+        #perf_command = f' perf stat -a sleep 5'  # Modify the perf command as per your requirements
+        mllog_start(key='RandFlip_start', value= data["image_name"],sync=True)
+
+        #profiler = cProfile.Profile()
+        #profiler.enable()
+        #perf_process = subprocess.Popen(perf_command, shell=True)
+        for axis in self.axis:
+            if random.random() < self.prob:
+                data = self.flip(data, axis)
+          # Stop capturing CPU usage
+        #profiler.disable()
+        # Specify the full file path to save the profiler output
+        mllog_event(key='Case image shape', value = data["image"].shape,sync=True )
+
+    
+        # Display the profiler output
+        #profiler_stats = pstats.Stats(profiler)
+        #profiler_stats.sort_stats(pstats.SortKey.CUMULATIVE)
+        #profiler_stats.print_stats()
+
+
+        # mllog_end(key='RandFlip_end', value= data["image_name"],sync=True) 
+        #perf_process.terminate()
+        #perf_process.wait()
+        
+        return data
+
+
+
+
+
+
+class Cast:
+    def __init__(self, types):
+        self.types = types
+
+    def __call__(self, data):
+        #perf_command = f' perf stat -a sleep 5'
+        # mllog_start(key='Cast_start', value= data["image_name"],  sync=True)
+       # profiler = cProfile.Profile()
+        #profiler.enable()
+
+        #perf_process = subprocess.Popen(perf_command, shell=True)
+
+
+        data["image"] = data["image"].astype(self.types[0])
+        data["label"] = data["label"].astype(self.types[1])
+        # mllog_event(key='Case image shape', value = data["image"].shape,sync=True )
+
+         # Stop capturing CPU usage
+       # perf_process.terminate()
+       # perf_process.wait()
+
+        #profiler.disable()
+        # Display the profiler output
+        #profiler_stats = pstats.Stats(profiler)
+        #profiler_stats.sort_stats(pstats.SortKey.CUMULATIVE)
+        # profiler_stats.print_stats()
+        # mllog_end(key='Cast_end', value= data["image_name"],sync=True)
+        return data
+
+
+
+class RandomBrightnessAugmentation:
+    def __init__(self, factor, prob):
+        self.prob = prob
+        self.factor = factor
+    def __call__(self, data):
+        #perf_command = f' perf stat -a sleep 5'
+
+        
+        # mllog_start(key='RandomBrightnessAugmentation_start', value=data["image_name"], sync=True)
+        #profiler = cProfile.Profile()
+        # profiler.enable()
+        image = data["image"]
+        # mllog_event(key='Case image shape', value = image.shape,sync=True )
+
+        #perf_process = subprocess.Popen(perf_command, shell=True)
+
+        if random.random() < self.prob:
+            factor = np.random.uniform(low=1.0 - self.factor, high=1.0 + self.factor, size=1)
+            image = (image * (1 + factor)).astype(image.dtype)
+            data.update({"image": image})
+         # Stop capturing CPU usage
+        #perf_process.terminate()
+        #perf_process.wait()
+        # profiler.disable()
+        # Display the profiler output
+        # profiler_stats = pstats.Stats(profiler)
+        #profiler_stats.sort_stats(pstats.SortKey.CUMULATIVE)
+        #profiler_stats.print_stats()
+        # mllog_end(key='RandomBrightnessAugmentation_end', value=data["image_name"], sync=True)
+        
+        return data
+
+import timeit
+
+class GaussianNoise:
+    def __init__(self, mean, std, prob):
+        self.mean = mean
+        self.std = std
+        self.prob = prob
+
+    def __call__(self, data):
+        #perf_command = f' perf stat -a sleep 5'
+        # mllog_start(key='RandGaussianNoise_start', value= data["image_name"],sync=True)
+        
+
+
+
+        
+        
+        #perf_process = subprocess.Popen(perf_command, shell=True)
+
+       
+        image = data["image"]
+        # mllog_event(key='Case image shape', value = image.shape,sync=True )
+
+        if random.random() < self.prob:
+                scale = np.random.uniform(low=0.0, high=self.std)
+                noise = np.random.normal(loc=self.mean, scale=scale, size=image.shape).astype(image.dtype)
+                data.update({"image": image + noise})
+        
+
+       
+      
+
+        # mllog_end(key='RandGaussianNoise_end', value= data["image_name"], sync=True)
+
+        
+      
+
+        return data
+
+
+
+
+class PytTrain(Dataset):
+    # mllog_start(key='onlinepreproc_start')
+    # print("bitchebe---------------onlineprec-1")
+    def __init__(self, images, labels, **kwargs):
+        # print("bitchebe---------------onlineprec-2")
+        self.images, self.labels = images, labels
+        self.train_transforms = get_train_transforms()
+        patch_size, oversampling = kwargs["patch_size"], kwargs["oversampling"]
+        self.patch_size = patch_size
+        self.rand_crop = RandBalancedCrop(patch_size=patch_size, oversampling=oversampling)
+        # print("bitchebe---------------onlineprec-3")
+
+    def __len__(self):
+        return len(self.images)
+
+    def __getitem__(self, idx):
+        # print("bitchebe---------------onlineprec-4")
+        image_path = self.images[idx]
+        label_path = self.labels[idx]
+
+        image_name = os.path.basename(image_path)
+        label_name = os.path.basename(label_path)
+
+        data = {
+            
+            "image": np.load(image_path),
+            "label": np.load(label_path),
+            "image_name": image_name,
+            "label_name": label_name
+        }
+        
+        # mllog_start(key='onlinepreprocessing_start', value=data['image_name'])
+        # print("bitchebe:onlinepreprocessing_start--")
+        preproc_start = time.time()
+
+        data = self.rand_crop(data)
+        data = self.train_transforms(data)
+        # mllog_end( key='onlinepreprocessing_end', value=data["image_name"] )
+        print("bitchebe.preproc_time: ", time.time() - preproc_start)
+        return data["image"], data["label"]
+
+
+class PytVal(Dataset):
+    def __init__(self, images, labels):
+        self.images, self.labels = images, labels
+
+    def __len__(self):
+        return len(self.images)
+
+    def __getitem__(self, idx):
+        return np.load(self.images[idx]), np.load(self.labels[idx])
+
+
+
+

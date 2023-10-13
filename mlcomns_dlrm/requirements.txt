@@ -1,0 +1,24 @@
+docstring-parser==0.8.1
+requests>=2.26.0
+urllib3>=1.26.0
+future
+numpy
+onnx
+pydot
+torch>=1.3.1
+torchviz
+scikit-learn
+tqdm
+torchrec-nightly
+torchx-nightly
+
+# future
+# numpy
+# onnx
+# pydot
+# torch
+# torchviz
+# scikit-learn
+# tqdm
+# torchrec-nightly
+# torchx-nightly

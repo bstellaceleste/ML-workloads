@@ -4,4 +4,6 @@ __pycache__/
 *$py.class
 mlcomns_dlrm/data
 cuda*
-./ImageNet21K/.venv/lib/
+ImageNet21K/.venv/
+ImageNet21K/randomenv
+notes/cudnn/

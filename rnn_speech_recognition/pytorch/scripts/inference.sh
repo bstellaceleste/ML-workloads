@@ -25,7 +25,7 @@
 : ${CUDNN_BENCHMARK:=false}
 : ${MAX_DURATION:=""}
 : ${PAD_TO_MAX_DURATION:=false}
-: ${NUM_GPUS:=1}
+: ${NUM_GPUS:=2}
 : ${NUM_STEPS:="-1"}
 : ${AMP:=true}
 : ${BATCH_SIZE:=8}

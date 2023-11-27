@@ -53,6 +53,9 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
+import torch
+import torch.multiprocessing as mp
+
 import argparse
 
 # miscellaneous
@@ -2145,4 +2148,5 @@ def run():
 
 
 if __name__ == "__main__":
+    mp.set_start_method('spawn')
     run()

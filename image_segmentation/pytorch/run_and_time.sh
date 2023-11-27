@@ -8,7 +8,7 @@ set -e
 SEED=${1:--1}
 NUM_GPUS=${2:-1}
 BATCH_SIZE=${3:-4}
-NUM_WORKERS=${4:-40}
+NUM_WORKERS=${4:-4}
 NUM_EPOCHS=${5:-10}
 
 

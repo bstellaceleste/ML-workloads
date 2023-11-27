@@ -15,6 +15,8 @@ WORKDIR /code
 
 RUN pip install --ignore-installed -r requirements.txt
 
+RUN apt-get install -y time
+
 RUN git clone https://github.com/mlperf/logging.git mlperf-logging
 RUN pip install --ignore-installed -e mlperf-logging
 

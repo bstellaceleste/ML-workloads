@@ -20,12 +20,14 @@ FROM ${FROM_IMAGE_NAME}
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3BF863CC
 
 # Make sure git is installed (needed by pip)
-RUN apt-get update \
- && apt-get install -y --no-install-recommends git \
+RUN apt-get update 
+RUN apt-get install -y --no-install-recommends git \
  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update
 RUN apt-get install -y vim
+RUN apt-get install -y time
+RUN apt-get install -y libcurl4
 
 RUN conda install -c conda-forge pycocotools
  

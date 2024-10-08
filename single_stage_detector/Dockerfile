@@ -16,27 +16,21 @@ ARG FROM_IMAGE_NAME=pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel
 # ARG FROM_IMAGE_NAME=nvcr.io/nvidia/pytorch:22.01-py3
 FROM ${FROM_IMAGE_NAME}
 
-
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3BF863CC
-
 # Make sure git is installed (needed by pip)
-RUN apt-get update 
-RUN apt-get install -y --no-install-recommends git \
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+RUN apt-get update \
+ && apt-get install -y vim \
+ && apt-get install -y --no-install-recommends \
+        git libcurl4 wget \
  && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update
-RUN apt-get install -y vim
-RUN apt-get install -y time
-RUN apt-get install -y libcurl4
-
-RUN conda install -c conda-forge pycocotools
- 
 # Install python dependencies
 COPY requirements.txt /
 # Cython needs to be present before attempting to install pycocotools
 RUN pip install --no-cache-dir Cython
 RUN pip install --no-cache-dir -r /requirements.txt
-RUN pip install fiftyone
+
 # Copy code
 COPY . /workspace/single_stage_detector
 

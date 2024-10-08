@@ -174,12 +174,19 @@ def get_coco_api_from_dataset(dataset):
 class CocoDetection(torchvision.datasets.CocoDetection):
     def __init__(self, img_folder, ann_file, transforms):
         super(CocoDetection, self).__init__(img_folder, ann_file)
+        # print("bitchebeCocoDetection: ", img_folder, ann_file)
         self._transforms = transforms
 
     def __getitem__(self, idx):
         img, target = super(CocoDetection, self).__getitem__(idx)
         image_id = self.ids[idx]
+        # ann_file = "/datasets/open-images-v6-mlperf/train/labels/openimages-mlperf.json"
+        # coco=COCO(ann_file)
+        # image_info = coco.loadImgs(image_id)
+        # image_name = image_info[0]['file_name']
+        # print("bitchebeCocoDetection-Image: ", image_name)
         target = dict(image_id=image_id, annotations=target)
+    
         if self._transforms is not None:
             img, target = self._transforms(img, target)
         return img, target

@@ -34,6 +34,7 @@ def get_dataset_fn(name):
 
 
 def get_transform(train, data_augmentation):
+    print("bitchebe: get_transform")
     return presets.DetectionPresetTrain(data_augmentation) if train else presets.DetectionPresetEval()
 
 

@@ -1,6 +1,11 @@
 import torch
 import torchvision
 
+import time
+
+from pycocotools import mask as coco_mask
+from pycocotools.coco import COCO
+
 from torch import nn, Tensor
 from torchvision.transforms import functional as F
 from torchvision.transforms import transforms as T
@@ -16,6 +21,15 @@ def _flip_coco_person_keypoints(kps, width):
     flipped_data[inds] = 0
     return flipped_data
 
+def get_image_name(target_id):
+    tmp = target_id.split('[')
+    tmp2 = tmp[1].split(']')
+    image_id = tmp2[0]
+    # print("get_image_name ", type(image_id))
+    ann_file = "/datasets/open-images-v6-mlperf/train/labels/openimages-mlperf.json"
+    coco=COCO(ann_file)
+    image_info = coco.loadImgs(int(image_id))
+    return image_info[0]['file_name']
 
 ################################################################################
 # TODO(ahmadki): remove this block, and replace get_image_size with F.get_image_size
@@ -96,6 +110,7 @@ class Compose(object):
 class RandomHorizontalFlip(T.RandomHorizontalFlip):
     def forward(self, image: Tensor,
                 target: Optional[Dict[str, Tensor]] = None) -> Tuple[Tensor, Optional[Dict[str, Tensor]]]:
+        start_time = time.time()
         if torch.rand(1) < self.p:
             image = F.hflip(image)
             if target is not None:
@@ -107,6 +122,11 @@ class RandomHorizontalFlip(T.RandomHorizontalFlip):
                     keypoints = target["keypoints"]
                     keypoints = _flip_coco_person_keypoints(keypoints, width)
                     target["keypoints"] = keypoints
+        end_time = time.time() - start_time
+        tensor_id = str(target['image_id'])
+        image_name = get_image_name(tensor_id)
+        size = get_image_size(image)
+        print("bitchebe-RandomHorizontalFlip. Image:", image_name, "size:(", size,") -",int(size[0])*int(size[1]), "time:", end_time*1000, "ms")
         return image, target
 
 
@@ -133,6 +153,7 @@ class RandomIoUCrop(nn.Module):
 
     def forward(self, image: Tensor,
                 target: Optional[Dict[str, Tensor]] = None) -> Tuple[Tensor, Optional[Dict[str, Tensor]]]:
+        start_time = time.time()
         if target is None:
             raise ValueError("The targets can't be None for this transform.")
 
@@ -191,7 +212,13 @@ class RandomIoUCrop(nn.Module):
                 target["boxes"][:, 0::2].clamp_(min=0, max=new_w)
                 target["boxes"][:, 1::2].clamp_(min=0, max=new_h)
                 image = F.crop(image, top, left, new_h, new_w)
-
+                
+                end_time = time.time() - start_time
+                tensor_id = str(target['image_id'])
+                image_name = get_image_name(tensor_id)
+                size = get_image_size(image)
+                # print("bitchebe-RandomIoUCrop. Image: ", image_name, "time: ", end_time*1000, "ms")
+                print("bitchebe-RandomIoUCrop. Image:", image_name, "size:(", size,") -",int(size[0])*int(size[1]), "time:", end_time*1000, "ms")
                 return image, target
 
 
@@ -214,6 +241,7 @@ class RandomZoomOut(nn.Module):
 
     def forward(self, image: Tensor,
                 target: Optional[Dict[str, Tensor]] = None) -> Tuple[Tensor, Optional[Dict[str, Tensor]]]:
+        start_time = time.time()
         if isinstance(image, torch.Tensor):
             if image.ndimension() not in {2, 3}:
                 raise ValueError('image should be 2/3 dimensional. Got {} dimensions.'.format(image.ndimension()))
@@ -249,7 +277,13 @@ class RandomZoomOut(nn.Module):
         if target is not None:
             target["boxes"][:, 0::2] += left
             target["boxes"][:, 1::2] += top
-
+        
+        end_time = time.time() - start_time
+        tensor_id = str(target['image_id'])
+        image_name = get_image_name(tensor_id)
+        size = get_image_size(image)
+        # print("bitchebe-RandomZoomOut. Image: ", image_name, "time: ", end_time*1000, "ms")
+        print("bitchebe-RandomZoomOut. Image:", image_name, "size:(", size,") -",int(size[0])*int(size[1]), "time:", end_time*1000, "ms")
         return image, target
 
 
@@ -265,6 +299,7 @@ class RandomPhotometricDistort(nn.Module):
 
     def forward(self, image: Tensor,
                 target: Optional[Dict[str, Tensor]] = None) -> Tuple[Tensor, Optional[Dict[str, Tensor]]]:
+        start_time = time.time()
         if isinstance(image, torch.Tensor):
             if image.ndimension() not in {2, 3}:
                 raise ValueError('image should be 2/3 dimensional. Got {} dimensions.'.format(image.ndimension()))
@@ -301,5 +336,10 @@ class RandomPhotometricDistort(nn.Module):
             image = image[..., permutation, :, :]
             if is_pil:
                 image = F.to_pil_image(image)
-
+        end_time = time.time() - start_time
+        tensor_id = str(target['image_id'])
+        image_name = get_image_name(tensor_id)
+        size = get_image_size(image)
+        # print("bitchebe-RandomPhotometricDistort. Image: ", image_name, "time: ", end_time*1000, "ms")
+        print("bitchebe-RandomPhotometricDistort. Image:", image_name, "size:(", size,") -",int(size[0])*int(size[1]), "time:", end_time*1000, "ms")
         return image, target

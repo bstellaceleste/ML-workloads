@@ -7,3 +7,6 @@ cuda*
 ImageNet21K/.venv/
 ImageNet21K/randomenv
 notes/cudnn/
+single_stage_detector/env/
+single_stage_detector/scripts/env/lib/python3.8/site-packages/fiftyone/db/bin/
+single_stage_detector/scripts/env/lib/python3.8/site-packages/kaleido/executable/bin/

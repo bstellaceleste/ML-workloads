@@ -1,13 +1,14 @@
 #!/bin/bash
 
 TERABYTE_PROC_DIR="/raid/data/dlrm/terabyte_mmap_bin"
+KAGGLE_DIR="/raid/data/dlrm/kaggle"
 
 # Default output dir will be where this script is located
 SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )")
 OUTPUT_DIR="/raid/data/dlrm/run_output"
 mkdir -p $OUTPUT_DIR
 
-num_gpus=${1:-2}
+num_gpus=${1:-1}
 container_name=${2:-train_dlrm}
 IMAGE_NAME=${3:-dlrm:instrumented}
 BATCH_SIZE=${4:-2048}
@@ -24,6 +25,7 @@ docker run -it --rm \
     --gpus $num_gpus \
     --name $container_name \
     -v $TERABYTE_PROC_DIR:/proc_data \
+    -v $KAGGLE_DIR:/data_kaggle \
     -v $OUTPUT_DIR:/code/output \
     $IMAGE_NAME /bin/bash 
 

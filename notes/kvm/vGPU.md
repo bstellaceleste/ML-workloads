@@ -138,7 +138,7 @@ Given the definition above, we need to create mediated devices for each VM to wh
 > lsmod | grep nvidia_vgpu_vfio
 > systemctl status nvidia-vgpu-mgr.service
 
-2. We should generate a device `UUID` to be associated with the mediated device
+2. We should generate a device `UUID` to be associated with the mediated device: uuidgen
 
 3. We now prepare the xml configuration of the mediated device. Like previously, to obtain the list of vGPUs of each physical GPU, use `virsh nodedev-dumpxml pci_ID` where ID can be obtained in the `nvidia-smi` output.
 

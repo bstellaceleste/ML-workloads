@@ -1,0 +1,1958 @@
+:::MLLOG {"namespace": "", "time_ms": 1700493612819, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 186}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613002, "event_type": "POINT_IN_TIME", "key": "seed", "value": 1, "metadata": {"file": "train.py", "lineno": 206}}
+DLL 2023-11-20 15:20:13.011808 - PARAMETER | epochs :  1
+DLL 2023-11-20 15:20:13.011969 - PARAMETER | warmup_epochs :  1
+DLL 2023-11-20 15:20:13.012017 - PARAMETER | hold_epochs :  1
+DLL 2023-11-20 15:20:13.012051 - PARAMETER | epochs_this_job :  0
+DLL 2023-11-20 15:20:13.012082 - PARAMETER | cudnn_benchmark :  True
+DLL 2023-11-20 15:20:13.012113 - PARAMETER | amp :  False
+DLL 2023-11-20 15:20:13.012163 - PARAMETER | seed :  1
+DLL 2023-11-20 15:20:13.012209 - PARAMETER | local_rank :  0
+DLL 2023-11-20 15:20:13.012238 - PARAMETER | target :  0.058
+DLL 2023-11-20 15:20:13.012283 - PARAMETER | weights_init_scale :  0.5
+DLL 2023-11-20 15:20:13.012331 - PARAMETER | hidden_hidden_bias_scale : 
+DLL 2023-11-20 15:20:13.012370 - PARAMETER | batch_size :  1024
+DLL 2023-11-20 15:20:13.012416 - PARAMETER | val_batch_size :  8
+DLL 2023-11-20 15:20:13.012486 - PARAMETER | lr :  0.004
+DLL 2023-11-20 15:20:13.012543 - PARAMETER | min_lr :  1e-05
+DLL 2023-11-20 15:20:13.012619 - PARAMETER | lr_exp_gamma :  0.935
+DLL 2023-11-20 15:20:13.012671 - PARAMETER | weight_decay :  0.001
+DLL 2023-11-20 15:20:13.012703 - PARAMETER | grad_accumulation_steps :  64
+DLL 2023-11-20 15:20:13.012736 - PARAMETER | log_norm :  False
+DLL 2023-11-20 15:20:13.012811 - PARAMETER | clip_norm :  1.0
+DLL 2023-11-20 15:20:13.012877 - PARAMETER | beta1 :  0.9
+DLL 2023-11-20 15:20:13.012907 - PARAMETER | beta2 :  0.999
+DLL 2023-11-20 15:20:13.012942 - PARAMETER | ema :  0.999
+DLL 2023-11-20 15:20:13.012995 - PARAMETER | dali_device :  cpu
+DLL 2023-11-20 15:20:13.013025 - PARAMETER | resume :  False
+DLL 2023-11-20 15:20:13.013055 - PARAMETER | ckpt : 
+DLL 2023-11-20 15:20:13.013100 - PARAMETER | save_at_the_end :  False
+DLL 2023-11-20 15:20:13.013181 - PARAMETER | save_frequency : 
+DLL 2023-11-20 15:20:13.013229 - PARAMETER | keep_milestones :  []
+DLL 2023-11-20 15:20:13.013261 - PARAMETER | save_best_from :  200
+DLL 2023-11-20 15:20:13.013289 - PARAMETER | val_frequency :  1
+DLL 2023-11-20 15:20:13.013316 - PARAMETER | log_frequency :  1
+DLL 2023-11-20 15:20:13.013360 - PARAMETER | prediction_frequency :  1000
+DLL 2023-11-20 15:20:13.013403 - PARAMETER | model_config :  configs/baseline_v3-1023sp.yaml
+DLL 2023-11-20 15:20:13.013430 - PARAMETER | num_buckets :  4
+DLL 2023-11-20 15:20:13.013457 - PARAMETER | train_manifests :  ['/datasets/LibriSpeech/librispeech-train-clean-100-wav.json']
+DLL 2023-11-20 15:20:13.013505 - PARAMETER | val_manifests :  ['/datasets/LibriSpeech/librispeech-dev-clean-wav.json']
+DLL 2023-11-20 15:20:13.013534 - PARAMETER | max_duration : 
+DLL 2023-11-20 15:20:13.013561 - PARAMETER | dataset_dir :  /datasets/LibriSpeech
+DLL 2023-11-20 15:20:13.013598 - PARAMETER | output_dir :  /results
+DLL 2023-11-20 15:20:13.013636 - PARAMETER | log_file : 
+DLL 2023-11-20 15:20:13.013751 - PARAMETER | max_symbol_per_sample :  300
+:::MLLOG {"namespace": "", "time_ms": 1700493613046, "event_type": "POINT_IN_TIME", "key": "gradient_accumulation_steps", "value": 64, "metadata": {"file": "train.py", "lineno": 220}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613047, "event_type": "POINT_IN_TIME", "key": "submission_benchmark", "value": "rnnt", "metadata": {"file": "train.py", "lineno": 223}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613047, "event_type": "POINT_IN_TIME", "key": "submission_org", "value": "my-organization", "metadata": {"file": "train.py", "lineno": 224}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613047, "event_type": "POINT_IN_TIME", "key": "submission_division", "value": "closed", "metadata": {"file": "train.py", "lineno": 225}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613047, "event_type": "POINT_IN_TIME", "key": "submission_status", "value": "onprem", "metadata": {"file": "train.py", "lineno": 226}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613047, "event_type": "POINT_IN_TIME", "key": "submission_platform", "value": "my platform", "metadata": {"file": "train.py", "lineno": 227}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613047, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 229}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613047, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 232}}
+Setting up datasets...
+:::MLLOG {"namespace": "", "time_ms": 1700493613048, "event_type": "POINT_IN_TIME", "key": "data_train_max_duration", "value": 16.7, "metadata": {"file": "train.py", "lineno": 250}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613048, "event_type": "POINT_IN_TIME", "key": "data_speed_perturbaton_max", "value": 1.15, "metadata": {"file": "train.py", "lineno": 252}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613048, "event_type": "POINT_IN_TIME", "key": "data_speed_perturbaton_min", "value": 0.85, "metadata": {"file": "train.py", "lineno": 254}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613049, "event_type": "POINT_IN_TIME", "key": "data_spec_augment_freq_n", "value": 2, "metadata": {"file": "train.py", "lineno": 256}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613049, "event_type": "POINT_IN_TIME", "key": "data_spec_augment_freq_min", "value": 0, "metadata": {"file": "train.py", "lineno": 258}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613049, "event_type": "POINT_IN_TIME", "key": "data_spec_augment_freq_max", "value": 20, "metadata": {"file": "train.py", "lineno": 260}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613049, "event_type": "POINT_IN_TIME", "key": "data_spec_augment_time_n", "value": 10, "metadata": {"file": "train.py", "lineno": 262}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613049, "event_type": "POINT_IN_TIME", "key": "data_spec_augment_time_min", "value": 0, "metadata": {"file": "train.py", "lineno": 264}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613049, "event_type": "POINT_IN_TIME", "key": "data_spec_augment_time_max", "value": 0.03, "metadata": {"file": "train.py", "lineno": 266}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613049, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 1024, "metadata": {"file": "train.py", "lineno": 268}}
+:::MLLOG {"namespace": "", "time_ms": 1700493613055, "event_type": "POINT_IN_TIME", "key": "data_train_num_buckets", "value": 4, "metadata": {"file": "train.py", "lineno": 289}}
+Dataset read by DALI. Number of samples: 28240
+Initializing DALI with parameters:
+	           __class__ : <class 'common.data.dali.pipeline.DaliPipeline'>
+	          batch_size : 16
+	           device_id : 0
+	        dither_coeff : 1e-05
+	           file_root : /datasets/LibriSpeech
+	        max_duration : 16.7
+	           nfeatures : 80
+	                nfft : 512
+	         num_threads : 16
+	       pipeline_type : train
+	       preemph_coeff : 0.97
+	preprocessing_device : cpu
+	      resample_range : [0.85, 1.15]
+	         sample_rate : 16000
+	             sampler : <common.data.dali.sampler.BucketingSampler object at 0x7fb30c272100>
+	                self : <common.data.dali.pipeline.DaliPipeline object at 0x7fb313e053a0>
+	   silence_threshold : -60
+	         window_size : 0.02
+	       window_stride : 0.01
+/opt/conda/lib/python3.8/site-packages/nvidia/dali/plugin/base_iterator.py:156: Warning: Please set `reader_name` and don't set last_batch_padded and size manually  whenever possible. This may lead, in some situations, to miss some  samples or return duplicated ones. Check the Sharding section of the documentation for more details.
+  _iterator_deprecation_warning()
+/workspace/rnnt/common/data/dali/iterator.py:79: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  self.tr = np.array(transcripts, dtype=object)
+Dataset read by DALI. Number of samples: 2703
+Initializing DALI with parameters:
+	           __class__ : <class 'common.data.dali.pipeline.DaliPipeline'>
+	          batch_size : 8
+	           device_id : 0
+	        dither_coeff : 1e-05
+	           file_root : /datasets/LibriSpeech
+	        max_duration : inf
+	           nfeatures : 80
+	                nfft : 512
+	         num_threads : 16
+	       pipeline_type : val
+	       preemph_coeff : 0.97
+	preprocessing_device : cpu
+	      resample_range : None
+	         sample_rate : 16000
+	             sampler : <common.data.dali.sampler.SimpleSampler object at 0x7fb30c2723a0>
+	                self : <common.data.dali.pipeline.DaliPipeline object at 0x7fb313e0f490>
+	   silence_threshold : -60
+	         window_size : 0.02
+	       window_stride : 0.01
+:::MLLOG {"namespace": "", "time_ms": 1700493618099, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 28240, "metadata": {"file": "train.py", "lineno": 333}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618099, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 2703, "metadata": {"file": "train.py", "lineno": 334}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618099, "event_type": "POINT_IN_TIME", "key": "model_weights_initialization_scale", "value": 0.5, "metadata": {"file": "train.py", "lineno": 338}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618210, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/rnnt/common/rnn.py", "lineno": 78, "tensor": "pre_rnn"}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618446, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/rnnt/common/rnn.py", "lineno": 78, "tensor": "post_rnn"}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618452, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/rnnt/rnnt/model.py", "lineno": 106, "tensor": "pred_embed"}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618487, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/rnnt/common/rnn.py", "lineno": 78, "tensor": "dec_rnn"}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618489, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/rnnt/rnnt/model.py", "lineno": 126, "tensor": "joint_pred"}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618493, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/rnnt/rnnt/model.py", "lineno": 131, "tensor": "joint_enc"}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618498, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/rnnt/rnnt/model.py", "lineno": 138, "tensor": "joint_net"}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618917, "event_type": "POINT_IN_TIME", "key": "eval_max_prediction_symbols", "value": 300, "metadata": {"file": "train.py", "lineno": 347}}
+Model size: 49.0M params
+
+:::MLLOG {"namespace": "", "time_ms": 1700493618917, "event_type": "POINT_IN_TIME", "key": "opt_name", "value": "lamb", "metadata": {"file": "train.py", "lineno": 354}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618917, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.004, "metadata": {"file": "train.py", "lineno": 355}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618918, "event_type": "POINT_IN_TIME", "key": "opt_lamb_epsilon", "value": 1e-09, "metadata": {"file": "train.py", "lineno": 356}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618918, "event_type": "POINT_IN_TIME", "key": "opt_lamb_learning_rate_decay_poly_power", "value": 0.935, "metadata": {"file": "train.py", "lineno": 357}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618918, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_epochs", "value": 1, "metadata": {"file": "train.py", "lineno": 358}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618918, "event_type": "POINT_IN_TIME", "key": "opt_lamb_learning_rate_hold_epochs", "value": 1, "metadata": {"file": "train.py", "lineno": 359}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618918, "event_type": "POINT_IN_TIME", "key": "opt_lamb_beta_1", "value": 0.9, "metadata": {"file": "train.py", "lineno": 360}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618918, "event_type": "POINT_IN_TIME", "key": "opt_lamb_beta_2", "value": 0.999, "metadata": {"file": "train.py", "lineno": 361}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618919, "event_type": "POINT_IN_TIME", "key": "opt_gradient_clip_norm", "value": 1.0, "metadata": {"file": "train.py", "lineno": 362}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618919, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_alt_decay_func", "value": true, "metadata": {"file": "train.py", "lineno": 363}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618919, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_alt_warmup_func", "value": true, "metadata": {"file": "train.py", "lineno": 364}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618919, "event_type": "POINT_IN_TIME", "key": "opt_lamb_learning_rate_min", "value": 1e-05, "metadata": {"file": "train.py", "lineno": 365}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618919, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.001, "metadata": {"file": "train.py", "lineno": 366}}
+Starting with LRs: [0.004, 0.004, 0.004]
+:::MLLOG {"namespace": "", "time_ms": 1700493618927, "event_type": "POINT_IN_TIME", "key": "model_eval_ema_factor", "value": 0.999, "metadata": {"file": "train.py", "lineno": 393}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618929, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 418, "first_epoch_num": 1, "epoch_count": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1700493618929, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 421, "epoch_num": 1}}
+bitchebe.preproc_time:  0.00013637542724609375
+bitchebe.preproc_time:  0.019438743591308594
+bitchebe.preproc_time:  0.016006946563720703
+bitchebe.preproc_time:  0.016239643096923828
+bitchebe.preproc_time:  0.016405105590820312
+bitchebe.preproc_time:  0.016600847244262695
+bitchebe.preproc_time:  0.016030550003051758
+bitchebe.preproc_time:  0.016521930694580078
+bitchebe.preproc_time:  0.016263484954833984
+bitchebe.preproc_time:  0.016980409622192383
+bitchebe.preproc_time:  0.016103267669677734
+bitchebe.preproc_time:  0.016392946243286133
+bitchebe.preproc_time:  0.016165733337402344
+bitchebe.preproc_time:  0.016749143600463867
+bitchebe.preproc_time:  0.016746997833251953
+bitchebe.preproc_time:  0.01782965660095215
+bitchebe.preproc_time:  0.016839265823364258
+bitchebe.preproc_time:  0.016106128692626953
+bitchebe.preproc_time:  0.016051054000854492
+bitchebe.preproc_time:  0.015558958053588867
+bitchebe.preproc_time:  0.016466617584228516
+bitchebe.preproc_time:  0.016823291778564453
+bitchebe.preproc_time:  0.016412734985351562
+bitchebe.preproc_time:  0.016561031341552734
+bitchebe.preproc_time:  0.016257762908935547
+bitchebe.preproc_time:  0.016382694244384766
+bitchebe.preproc_time:  0.016725778579711914
+bitchebe.preproc_time:  0.01660323143005371
+bitchebe.preproc_time:  0.016181230545043945
+bitchebe.preproc_time:  0.01633477210998535
+bitchebe.preproc_time:  0.01618814468383789
+bitchebe.preproc_time:  0.015967607498168945
+bitchebe.preproc_time:  0.016844749450683594
+bitchebe.preproc_time:  0.016991853713989258
+bitchebe.preproc_time:  0.01591014862060547
+bitchebe.preproc_time:  0.016893625259399414
+bitchebe.preproc_time:  0.01674818992614746
+bitchebe.preproc_time:  0.01653885841369629
+bitchebe.preproc_time:  0.016752004623413086
+bitchebe.preproc_time:  0.017461776733398438
+bitchebe.preproc_time:  0.01681804656982422
+bitchebe.preproc_time:  0.016757726669311523
+bitchebe.preproc_time:  0.017076730728149414
+bitchebe.preproc_time:  0.016425609588623047
+bitchebe.preproc_time:  0.016803503036499023
+bitchebe.preproc_time:  0.016654014587402344
+bitchebe.preproc_time:  0.017548561096191406
+bitchebe.preproc_time:  0.016475439071655273
+bitchebe.preproc_time:  0.016454458236694336
+bitchebe.preproc_time:  0.01669025421142578
+bitchebe.preproc_time:  0.016847848892211914
+bitchebe.preproc_time:  0.017116069793701172
+bitchebe.preproc_time:  0.01677870750427246
+bitchebe.preproc_time:  0.016444683074951172
+bitchebe.preproc_time:  0.016265392303466797
+bitchebe.preproc_time:  0.01615285873413086
+bitchebe.preproc_time:  0.016539812088012695
+bitchebe.preproc_time:  0.017069339752197266
+bitchebe.preproc_time:  0.016928434371948242
+bitchebe.preproc_time:  0.016344070434570312
+bitchebe.preproc_time:  0.01584935188293457
+bitchebe.preproc_time:  0.016795635223388672
+bitchebe.preproc_time:  0.016552448272705078
+bitchebe.preproc_time:  0.016562223434448242
+bitchebe.preproc_time:  0.016614675521850586
+DLL 2023-11-20 15:20:50.309327 - epoch    1 | iter    1/27 | loss   15.90 | utts/s    33 | took 31.30 s | train_grad-norm :  0.0 | train_seq-len-min :  66 | train_seq-len-max :  624 | lrate 2.86e-04
+bitchebe.preproc_time:  0.00019073486328125
+bitchebe.preproc_time:  0.018279314041137695
+bitchebe.preproc_time:  0.01629781723022461
+bitchebe.preproc_time:  0.01712632179260254
+bitchebe.preproc_time:  0.017131805419921875
+bitchebe.preproc_time:  0.016859769821166992
+bitchebe.preproc_time:  0.017041683197021484
+bitchebe.preproc_time:  0.016844511032104492
+bitchebe.preproc_time:  0.016234874725341797
+bitchebe.preproc_time:  0.016798019409179688
+bitchebe.preproc_time:  0.01666736602783203
+bitchebe.preproc_time:  0.017081499099731445
+bitchebe.preproc_time:  0.016605615615844727
+bitchebe.preproc_time:  0.016066312789916992
+bitchebe.preproc_time:  0.01686406135559082
+bitchebe.preproc_time:  0.016905784606933594
+bitchebe.preproc_time:  0.016838550567626953
+bitchebe.preproc_time:  0.01710367202758789
+bitchebe.preproc_time:  0.01650834083557129
+bitchebe.preproc_time:  0.01690816879272461
+bitchebe.preproc_time:  0.015972137451171875
+bitchebe.preproc_time:  0.016335487365722656
+bitchebe.preproc_time:  0.016316890716552734
+bitchebe.preproc_time:  0.016628026962280273
+bitchebe.preproc_time:  0.015992164611816406
+bitchebe.preproc_time:  0.0167539119720459
+bitchebe.preproc_time:  0.01685023307800293
+bitchebe.preproc_time:  0.016887426376342773
+bitchebe.preproc_time:  0.016421794891357422
+bitchebe.preproc_time:  0.017128944396972656
+bitchebe.preproc_time:  0.01708364486694336
+bitchebe.preproc_time:  0.017700672149658203
+bitchebe.preproc_time:  0.016634464263916016
+bitchebe.preproc_time:  0.017805099487304688
+bitchebe.preproc_time:  0.016882896423339844
+bitchebe.preproc_time:  0.016651391983032227
+bitchebe.preproc_time:  0.01625204086303711
+bitchebe.preproc_time:  0.017163515090942383
+bitchebe.preproc_time:  0.016750574111938477
+bitchebe.preproc_time:  0.01787543296813965
+bitchebe.preproc_time:  0.016837120056152344
+bitchebe.preproc_time:  0.017386913299560547
+bitchebe.preproc_time:  0.01730942726135254
+bitchebe.preproc_time:  0.01757335662841797
+bitchebe.preproc_time:  0.017364978790283203
+bitchebe.preproc_time:  0.017694950103759766
+bitchebe.preproc_time:  0.016620397567749023
+bitchebe.preproc_time:  0.01697516441345215
+bitchebe.preproc_time:  0.01725006103515625
+bitchebe.preproc_time:  0.017371416091918945
+bitchebe.preproc_time:  0.017236948013305664
+bitchebe.preproc_time:  0.017565011978149414
+bitchebe.preproc_time:  0.016883373260498047
+bitchebe.preproc_time:  0.016969680786132812
+bitchebe.preproc_time:  0.01691460609436035
+bitchebe.preproc_time:  0.018171072006225586
+bitchebe.preproc_time:  0.017664432525634766
+bitchebe.preproc_time:  0.017910242080688477
+bitchebe.preproc_time:  0.017447710037231445
+bitchebe.preproc_time:  0.01764369010925293
+bitchebe.preproc_time:  0.017245769500732422
+bitchebe.preproc_time:  0.018334388732910156
+bitchebe.preproc_time:  0.01772761344909668
+bitchebe.preproc_time:  0.0186309814453125
+bitchebe.preproc_time:  0.018006324768066406
+DLL 2023-11-20 15:21:20.025322 - epoch    1 | iter    2/27 | loss   28.50 | utts/s    35 | took 29.63 s | train_grad-norm :  0.0 | train_seq-len-min :  63 | train_seq-len-max :  638 | lrate 4.29e-04
+bitchebe.preproc_time:  0.0002238750457763672
+bitchebe.preproc_time:  0.019256114959716797
+bitchebe.preproc_time:  0.018302202224731445
+bitchebe.preproc_time:  0.017354726791381836
+bitchebe.preproc_time:  0.017974376678466797
+bitchebe.preproc_time:  0.01772904396057129
+bitchebe.preproc_time:  0.017720699310302734
+bitchebe.preproc_time:  0.01771259307861328
+bitchebe.preproc_time:  0.01739645004272461
+bitchebe.preproc_time:  0.018450498580932617
+bitchebe.preproc_time:  0.018586397171020508
+bitchebe.preproc_time:  0.01804208755493164
+bitchebe.preproc_time:  0.01795196533203125
+bitchebe.preproc_time:  0.01797175407409668
+bitchebe.preproc_time:  0.018133878707885742
+bitchebe.preproc_time:  0.01749134063720703
+bitchebe.preproc_time:  0.01776599884033203
+bitchebe.preproc_time:  0.018153667449951172
+bitchebe.preproc_time:  0.01753377914428711
+bitchebe.preproc_time:  0.017975807189941406
+bitchebe.preproc_time:  0.01795816421508789
+bitchebe.preproc_time:  0.017668962478637695
+bitchebe.preproc_time:  0.017557144165039062
+bitchebe.preproc_time:  0.017363786697387695
+bitchebe.preproc_time:  0.017927885055541992
+bitchebe.preproc_time:  0.017544269561767578
+bitchebe.preproc_time:  0.01686239242553711
+bitchebe.preproc_time:  0.01748371124267578
+bitchebe.preproc_time:  0.0170743465423584
+bitchebe.preproc_time:  0.017366886138916016
+bitchebe.preproc_time:  0.017145872116088867
+bitchebe.preproc_time:  0.017339229583740234
+bitchebe.preproc_time:  0.017029523849487305
+bitchebe.preproc_time:  0.01667499542236328
+bitchebe.preproc_time:  0.01621079444885254
+bitchebe.preproc_time:  0.0173337459564209
+bitchebe.preproc_time:  0.016483783721923828
+bitchebe.preproc_time:  0.016805171966552734
+bitchebe.preproc_time:  0.016568422317504883
+bitchebe.preproc_time:  0.017438888549804688
+bitchebe.preproc_time:  0.017553091049194336
+bitchebe.preproc_time:  0.017092227935791016
+bitchebe.preproc_time:  0.0168612003326416
+bitchebe.preproc_time:  0.01779031753540039
+bitchebe.preproc_time:  0.017549991607666016
+bitchebe.preproc_time:  0.01764988899230957
+bitchebe.preproc_time:  0.01831793785095215
+bitchebe.preproc_time:  0.017361879348754883
+bitchebe.preproc_time:  0.01652693748474121
+bitchebe.preproc_time:  0.016664981842041016
+bitchebe.preproc_time:  0.01723003387451172
+bitchebe.preproc_time:  0.01659369468688965
+bitchebe.preproc_time:  0.016364097595214844
+bitchebe.preproc_time:  0.016614675521850586
+bitchebe.preproc_time:  0.017006874084472656
+bitchebe.preproc_time:  0.01780080795288086
+bitchebe.preproc_time:  0.017441749572753906
+bitchebe.preproc_time:  0.017530441284179688
+bitchebe.preproc_time:  0.017369747161865234
+bitchebe.preproc_time:  0.017553091049194336
+bitchebe.preproc_time:  0.017586231231689453
+bitchebe.preproc_time:  0.01752471923828125
+bitchebe.preproc_time:  0.016795873641967773
+bitchebe.preproc_time:  0.01801323890686035
+bitchebe.preproc_time:  0.01755380630493164
+DLL 2023-11-20 15:21:50.886681 - epoch    1 | iter    3/27 | loss   28.44 | utts/s    33 | took 30.78 s | train_grad-norm :  0.0 | train_seq-len-min :  59 | train_seq-len-max :  627 | lrate 5.71e-04
+bitchebe.preproc_time:  0.00022125244140625
+bitchebe.preproc_time:  0.019887924194335938
+bitchebe.preproc_time:  0.0164642333984375
+bitchebe.preproc_time:  0.018664121627807617
+bitchebe.preproc_time:  0.017851591110229492
+bitchebe.preproc_time:  0.017589092254638672
+bitchebe.preproc_time:  0.01992321014404297
+bitchebe.preproc_time:  0.020532846450805664
+bitchebe.preproc_time:  0.020156383514404297
+bitchebe.preproc_time:  0.019535064697265625
+bitchebe.preproc_time:  0.02053689956665039
+bitchebe.preproc_time:  0.01981973648071289
+bitchebe.preproc_time:  0.019647836685180664
+bitchebe.preproc_time:  0.019695758819580078
+bitchebe.preproc_time:  0.020560741424560547
+bitchebe.preproc_time:  0.019586801528930664
+bitchebe.preproc_time:  0.019591569900512695
+bitchebe.preproc_time:  0.019624948501586914
+bitchebe.preproc_time:  0.019810914993286133
+bitchebe.preproc_time:  0.018477916717529297
+bitchebe.preproc_time:  0.01960015296936035
+bitchebe.preproc_time:  0.01994037628173828
+bitchebe.preproc_time:  0.019746780395507812
+bitchebe.preproc_time:  0.01946878433227539
+bitchebe.preproc_time:  0.019960880279541016
+bitchebe.preproc_time:  0.019753217697143555
+bitchebe.preproc_time:  0.020361900329589844
+bitchebe.preproc_time:  0.02014899253845215
+bitchebe.preproc_time:  0.020125865936279297
+bitchebe.preproc_time:  0.020116806030273438
+bitchebe.preproc_time:  0.02036261558532715
+bitchebe.preproc_time:  0.02015399932861328
+bitchebe.preproc_time:  0.019809961318969727
+bitchebe.preproc_time:  0.019984006881713867
+bitchebe.preproc_time:  0.019994735717773438
+bitchebe.preproc_time:  0.0196685791015625
+bitchebe.preproc_time:  0.01873469352722168
+bitchebe.preproc_time:  0.018573760986328125
+bitchebe.preproc_time:  0.019095897674560547
+bitchebe.preproc_time:  0.020984172821044922
+bitchebe.preproc_time:  0.019523143768310547
+bitchebe.preproc_time:  0.021345853805541992
+bitchebe.preproc_time:  0.01996636390686035
+bitchebe.preproc_time:  0.01970815658569336
+bitchebe.preproc_time:  0.01954174041748047
+bitchebe.preproc_time:  0.019849538803100586
+bitchebe.preproc_time:  0.01923680305480957
+bitchebe.preproc_time:  0.018904924392700195
+bitchebe.preproc_time:  0.01994609832763672
+bitchebe.preproc_time:  0.02064681053161621
+bitchebe.preproc_time:  0.019406557083129883
+bitchebe.preproc_time:  0.019754648208618164
+bitchebe.preproc_time:  0.0191953182220459
+bitchebe.preproc_time:  0.01835179328918457
+bitchebe.preproc_time:  0.020616531372070312
+bitchebe.preproc_time:  0.01984429359436035
+bitchebe.preproc_time:  0.01833963394165039
+bitchebe.preproc_time:  0.018762588500976562
+bitchebe.preproc_time:  0.019800662994384766
+bitchebe.preproc_time:  0.019222021102905273
+bitchebe.preproc_time:  0.019103527069091797
+bitchebe.preproc_time:  0.019344091415405273
+bitchebe.preproc_time:  0.01941990852355957
+bitchebe.preproc_time:  0.0193331241607666
+bitchebe.preproc_time:  0.019540071487426758
+DLL 2023-11-20 15:22:21.618320 - epoch    1 | iter    4/27 | loss   30.77 | utts/s    33 | took 30.65 s | train_grad-norm :  0.0 | train_seq-len-min :  65 | train_seq-len-max :  626 | lrate 7.14e-04
+bitchebe.preproc_time:  0.0002751350402832031
+bitchebe.preproc_time:  0.021201610565185547
+bitchebe.preproc_time:  0.019701719284057617
+bitchebe.preproc_time:  0.01975846290588379
+bitchebe.preproc_time:  0.019290685653686523
+bitchebe.preproc_time:  0.019289731979370117
+bitchebe.preproc_time:  0.01952505111694336
+bitchebe.preproc_time:  0.018708229064941406
+bitchebe.preproc_time:  0.019570350646972656
+bitchebe.preproc_time:  0.019330501556396484
+bitchebe.preproc_time:  0.018800735473632812
+bitchebe.preproc_time:  0.01922607421875
+bitchebe.preproc_time:  0.020242691040039062
+bitchebe.preproc_time:  0.020102500915527344
+bitchebe.preproc_time:  0.019868135452270508
+bitchebe.preproc_time:  0.018850088119506836
+bitchebe.preproc_time:  0.01949334144592285
+bitchebe.preproc_time:  0.019840240478515625
+bitchebe.preproc_time:  0.01846933364868164
+bitchebe.preproc_time:  0.019019126892089844
+bitchebe.preproc_time:  0.019469022750854492
+bitchebe.preproc_time:  0.018346071243286133
+bitchebe.preproc_time:  0.019367694854736328
+bitchebe.preproc_time:  0.019306182861328125
+bitchebe.preproc_time:  0.019108057022094727
+bitchebe.preproc_time:  0.01993560791015625
+bitchebe.preproc_time:  0.019655227661132812
+bitchebe.preproc_time:  0.02033376693725586
+bitchebe.preproc_time:  0.019488811492919922
+bitchebe.preproc_time:  0.020556926727294922
+bitchebe.preproc_time:  0.021511554718017578
+bitchebe.preproc_time:  0.02029109001159668
+bitchebe.preproc_time:  0.020276546478271484
+bitchebe.preproc_time:  0.01981949806213379
+bitchebe.preproc_time:  0.019321441650390625
+bitchebe.preproc_time:  0.02044844627380371
+bitchebe.preproc_time:  0.02094721794128418
+bitchebe.preproc_time:  0.019956111907958984
+bitchebe.preproc_time:  0.019588470458984375
+bitchebe.preproc_time:  0.0203244686126709
+bitchebe.preproc_time:  0.019582033157348633
+bitchebe.preproc_time:  0.020031452178955078
+bitchebe.preproc_time:  0.019596576690673828
+bitchebe.preproc_time:  0.02003622055053711
+bitchebe.preproc_time:  0.019271373748779297
+bitchebe.preproc_time:  0.019571304321289062
+bitchebe.preproc_time:  0.019779682159423828
+bitchebe.preproc_time:  0.01961541175842285
+bitchebe.preproc_time:  0.01913619041442871
+bitchebe.preproc_time:  0.020572423934936523
+bitchebe.preproc_time:  0.019725322723388672
+bitchebe.preproc_time:  0.019386768341064453
+bitchebe.preproc_time:  0.02044820785522461
+bitchebe.preproc_time:  0.020920753479003906
+bitchebe.preproc_time:  0.02127861976623535
+bitchebe.preproc_time:  0.02075934410095215
+bitchebe.preproc_time:  0.020737171173095703
+bitchebe.preproc_time:  0.021614789962768555
+bitchebe.preproc_time:  0.021236181259155273
+bitchebe.preproc_time:  0.021138668060302734
+bitchebe.preproc_time:  0.021081924438476562
+bitchebe.preproc_time:  0.02045440673828125
+bitchebe.preproc_time:  0.02122807502746582
+bitchebe.preproc_time:  0.021006107330322266
+bitchebe.preproc_time:  0.019085168838500977
+DLL 2023-11-20 15:22:53.302534 - epoch    1 | iter    5/27 | loss   17.12 | utts/s    32 | took 31.61 s | train_grad-norm :  0.0 | train_seq-len-min :  58 | train_seq-len-max :  624 | lrate 8.57e-04
+bitchebe.preproc_time:  0.00032639503479003906
+bitchebe.preproc_time:  0.019909143447875977
+bitchebe.preproc_time:  0.019405603408813477
+bitchebe.preproc_time:  0.018863201141357422
+bitchebe.preproc_time:  0.01961803436279297
+bitchebe.preproc_time:  0.019075870513916016
+bitchebe.preproc_time:  0.018932580947875977
+bitchebe.preproc_time:  0.01976943016052246
+bitchebe.preproc_time:  0.018438339233398438
+bitchebe.preproc_time:  0.018404722213745117
+bitchebe.preproc_time:  0.018625259399414062
+bitchebe.preproc_time:  0.018151521682739258
+bitchebe.preproc_time:  0.017926931381225586
+bitchebe.preproc_time:  0.017865419387817383
+bitchebe.preproc_time:  0.018053293228149414
+bitchebe.preproc_time:  0.017450332641601562
+bitchebe.preproc_time:  0.01791834831237793
+bitchebe.preproc_time:  0.017579078674316406
+bitchebe.preproc_time:  0.018166065216064453
+bitchebe.preproc_time:  0.03037405014038086
+bitchebe.preproc_time:  0.017846107482910156
+bitchebe.preproc_time:  0.01760268211364746
+bitchebe.preproc_time:  0.01937413215637207
+bitchebe.preproc_time:  0.017533063888549805
+bitchebe.preproc_time:  0.01703023910522461
+bitchebe.preproc_time:  0.01710057258605957
+bitchebe.preproc_time:  0.018453598022460938
+bitchebe.preproc_time:  0.017339229583740234
+bitchebe.preproc_time:  0.017630338668823242
+bitchebe.preproc_time:  0.017597198486328125
+bitchebe.preproc_time:  0.01768207550048828
+bitchebe.preproc_time:  0.018390417098999023
+bitchebe.preproc_time:  0.018203258514404297
+bitchebe.preproc_time:  0.017580270767211914
+bitchebe.preproc_time:  0.018302440643310547
+bitchebe.preproc_time:  0.01844954490661621
+bitchebe.preproc_time:  0.017882823944091797
+bitchebe.preproc_time:  0.018421173095703125
+bitchebe.preproc_time:  0.018207550048828125
+bitchebe.preproc_time:  0.018214941024780273
+bitchebe.preproc_time:  0.01813507080078125
+bitchebe.preproc_time:  0.018698453903198242
+bitchebe.preproc_time:  0.018420934677124023
+bitchebe.preproc_time:  0.017962932586669922
+bitchebe.preproc_time:  0.018075942993164062
+bitchebe.preproc_time:  0.017160892486572266
+bitchebe.preproc_time:  0.01790785789489746
+bitchebe.preproc_time:  0.017291784286499023
+bitchebe.preproc_time:  0.0182037353515625
+bitchebe.preproc_time:  0.0178680419921875
+bitchebe.preproc_time:  0.018022775650024414
+bitchebe.preproc_time:  0.01854419708251953
+bitchebe.preproc_time:  0.018471956253051758
+bitchebe.preproc_time:  0.01850104331970215
+bitchebe.preproc_time:  0.017749309539794922
+bitchebe.preproc_time:  0.018106460571289062
+bitchebe.preproc_time:  0.01912975311279297
+bitchebe.preproc_time:  0.01818990707397461
+bitchebe.preproc_time:  0.018766164779663086
+bitchebe.preproc_time:  0.018002986907958984
+bitchebe.preproc_time:  0.01708984375
+bitchebe.preproc_time:  0.01814436912536621
+bitchebe.preproc_time:  0.018547773361206055
+bitchebe.preproc_time:  0.018250465393066406
+bitchebe.preproc_time:  0.01848459243774414
+DLL 2023-11-20 15:23:24.882208 - epoch    1 | iter    6/27 | loss   14.87 | utts/s    33 | took 31.50 s | train_grad-norm :  0.0 | train_seq-len-min :  69 | train_seq-len-max :  620 | lrate 1.00e-03
+bitchebe.preproc_time:  0.0003204345703125
+bitchebe.preproc_time:  0.020018815994262695
+bitchebe.preproc_time:  0.017966270446777344
+bitchebe.preproc_time:  0.017454862594604492
+bitchebe.preproc_time:  0.018571138381958008
+bitchebe.preproc_time:  0.016949892044067383
+bitchebe.preproc_time:  0.01767134666442871
+bitchebe.preproc_time:  0.017888784408569336
+bitchebe.preproc_time:  0.017484664916992188
+bitchebe.preproc_time:  0.01734185218811035
+bitchebe.preproc_time:  0.01804494857788086
+bitchebe.preproc_time:  0.01729750633239746
+bitchebe.preproc_time:  0.017819881439208984
+bitchebe.preproc_time:  0.01815629005432129
+bitchebe.preproc_time:  0.017682790756225586
+bitchebe.preproc_time:  0.018023967742919922
+bitchebe.preproc_time:  0.018168210983276367
+bitchebe.preproc_time:  0.018075227737426758
+bitchebe.preproc_time:  0.018250465393066406
+bitchebe.preproc_time:  0.017858028411865234
+bitchebe.preproc_time:  0.018524885177612305
+bitchebe.preproc_time:  0.017487525939941406
+bitchebe.preproc_time:  0.018459558486938477
+bitchebe.preproc_time:  0.017655611038208008
+bitchebe.preproc_time:  0.016526222229003906
+bitchebe.preproc_time:  0.018728256225585938
+bitchebe.preproc_time:  0.01666426658630371
+bitchebe.preproc_time:  0.016889333724975586
+bitchebe.preproc_time:  0.017077922821044922
+bitchebe.preproc_time:  0.01956486701965332
+bitchebe.preproc_time:  0.017786741256713867
+bitchebe.preproc_time:  0.018469810485839844
+bitchebe.preproc_time:  0.019398927688598633
+bitchebe.preproc_time:  0.01769089698791504
+bitchebe.preproc_time:  0.017476558685302734
+bitchebe.preproc_time:  0.01755237579345703
+bitchebe.preproc_time:  0.017752408981323242
+bitchebe.preproc_time:  0.017125606536865234
+bitchebe.preproc_time:  0.018203020095825195
+bitchebe.preproc_time:  0.017101287841796875
+bitchebe.preproc_time:  0.017806529998779297
+bitchebe.preproc_time:  0.018222808837890625
+bitchebe.preproc_time:  0.018168210983276367
+bitchebe.preproc_time:  0.018178462982177734
+bitchebe.preproc_time:  0.017473936080932617
+bitchebe.preproc_time:  0.017075538635253906
+bitchebe.preproc_time:  0.01850581169128418
+bitchebe.preproc_time:  0.018081188201904297
+bitchebe.preproc_time:  0.018275022506713867
+bitchebe.preproc_time:  0.017085552215576172
+bitchebe.preproc_time:  0.018224000930786133
+bitchebe.preproc_time:  0.017357587814331055
+bitchebe.preproc_time:  0.0167999267578125
+bitchebe.preproc_time:  0.017596960067749023
+bitchebe.preproc_time:  0.017986536026000977
+bitchebe.preproc_time:  0.01790761947631836
+bitchebe.preproc_time:  0.01807713508605957
+bitchebe.preproc_time:  0.018095731735229492
+bitchebe.preproc_time:  0.018097877502441406
+bitchebe.preproc_time:  0.0173947811126709
+bitchebe.preproc_time:  0.01688861846923828
+bitchebe.preproc_time:  0.018271446228027344
+bitchebe.preproc_time:  0.016635656356811523
+bitchebe.preproc_time:  0.017160415649414062
+bitchebe.preproc_time:  0.017423391342163086
+DLL 2023-11-20 15:23:54.422073 - epoch    1 | iter    7/27 | loss   30.21 | utts/s    35 | took 29.46 s | train_grad-norm :  0.0 | train_seq-len-min :  53 | train_seq-len-max :  633 | lrate 1.14e-03
+bitchebe.preproc_time:  0.0003147125244140625
+bitchebe.preproc_time:  0.019124269485473633
+bitchebe.preproc_time:  0.01726555824279785
+bitchebe.preproc_time:  0.01780557632446289
+bitchebe.preproc_time:  0.0181729793548584
+bitchebe.preproc_time:  0.0179903507232666
+bitchebe.preproc_time:  0.017559051513671875
+bitchebe.preproc_time:  0.017804622650146484
+bitchebe.preproc_time:  0.017652511596679688
+bitchebe.preproc_time:  0.01687479019165039
+bitchebe.preproc_time:  0.017217397689819336
+bitchebe.preproc_time:  0.01685929298400879
+bitchebe.preproc_time:  0.017260074615478516
+bitchebe.preproc_time:  0.017171859741210938
+bitchebe.preproc_time:  0.017659664154052734
+bitchebe.preproc_time:  0.017545700073242188
+bitchebe.preproc_time:  0.016591310501098633
+bitchebe.preproc_time:  0.01702713966369629
+bitchebe.preproc_time:  0.01710987091064453
+bitchebe.preproc_time:  0.017222166061401367
+bitchebe.preproc_time:  0.01712203025817871
+bitchebe.preproc_time:  0.016809701919555664
+bitchebe.preproc_time:  0.0165712833404541
+bitchebe.preproc_time:  0.0170135498046875
+bitchebe.preproc_time:  0.016897201538085938
+bitchebe.preproc_time:  0.017264366149902344
+bitchebe.preproc_time:  0.016826629638671875
+bitchebe.preproc_time:  0.016714811325073242
+bitchebe.preproc_time:  0.017813920974731445
+bitchebe.preproc_time:  0.01633167266845703
+bitchebe.preproc_time:  0.01764369010925293
+bitchebe.preproc_time:  0.01766824722290039
+bitchebe.preproc_time:  0.018032312393188477
+bitchebe.preproc_time:  0.01744532585144043
+bitchebe.preproc_time:  0.01734137535095215
+bitchebe.preproc_time:  0.018962383270263672
+bitchebe.preproc_time:  0.017055511474609375
+bitchebe.preproc_time:  0.018060684204101562
+bitchebe.preproc_time:  0.018285036087036133
+bitchebe.preproc_time:  0.019500017166137695
+bitchebe.preproc_time:  0.017568588256835938
+bitchebe.preproc_time:  0.01681661605834961
+bitchebe.preproc_time:  0.017678022384643555
+bitchebe.preproc_time:  0.017594099044799805
+bitchebe.preproc_time:  0.017264127731323242
+bitchebe.preproc_time:  0.017066240310668945
+bitchebe.preproc_time:  0.01860642433166504
+bitchebe.preproc_time:  0.01801466941833496
+bitchebe.preproc_time:  0.017380237579345703
+bitchebe.preproc_time:  0.01885247230529785
+bitchebe.preproc_time:  0.01726698875427246
+bitchebe.preproc_time:  0.016810894012451172
+bitchebe.preproc_time:  0.01688098907470703
+bitchebe.preproc_time:  0.017470836639404297
+bitchebe.preproc_time:  0.01699519157409668
+bitchebe.preproc_time:  0.016871929168701172
+bitchebe.preproc_time:  0.016282320022583008
+bitchebe.preproc_time:  0.017271041870117188
+bitchebe.preproc_time:  0.017427444458007812
+bitchebe.preproc_time:  0.018551349639892578
+bitchebe.preproc_time:  0.017788410186767578
+bitchebe.preproc_time:  0.017726659774780273
+bitchebe.preproc_time:  0.018768787384033203
+bitchebe.preproc_time:  0.01873159408569336
+bitchebe.preproc_time:  0.018558025360107422
+DLL 2023-11-20 15:24:25.468095 - epoch    1 | iter    8/27 | loss   33.65 | utts/s    33 | took 30.96 s | train_grad-norm :  0.0 | train_seq-len-min :  73 | train_seq-len-max :  620 | lrate 1.29e-03
+bitchebe.preproc_time:  0.00027108192443847656
+bitchebe.preproc_time:  0.019887924194335938
+bitchebe.preproc_time:  0.019090652465820312
+bitchebe.preproc_time:  0.017582178115844727
+bitchebe.preproc_time:  0.01900649070739746
+bitchebe.preproc_time:  0.018860816955566406
+bitchebe.preproc_time:  0.017954111099243164
+bitchebe.preproc_time:  0.01890397071838379
+bitchebe.preproc_time:  0.01854872703552246
+bitchebe.preproc_time:  0.01792120933532715
+bitchebe.preproc_time:  0.01822066307067871
+bitchebe.preproc_time:  0.017917394638061523
+bitchebe.preproc_time:  0.018230199813842773
+bitchebe.preproc_time:  0.018984079360961914
+bitchebe.preproc_time:  0.018639326095581055
+bitchebe.preproc_time:  0.018054723739624023
+bitchebe.preproc_time:  0.01791071891784668
+bitchebe.preproc_time:  0.018126487731933594
+bitchebe.preproc_time:  0.017637014389038086
+bitchebe.preproc_time:  0.01816725730895996
+bitchebe.preproc_time:  0.017516136169433594
+bitchebe.preproc_time:  0.01779627799987793
+bitchebe.preproc_time:  0.017853736877441406
+bitchebe.preproc_time:  0.01826786994934082
+bitchebe.preproc_time:  0.018293380737304688
+bitchebe.preproc_time:  0.01830458641052246
+bitchebe.preproc_time:  0.017565250396728516
+bitchebe.preproc_time:  0.018175125122070312
+bitchebe.preproc_time:  0.01768326759338379
+bitchebe.preproc_time:  0.018378734588623047
+bitchebe.preproc_time:  0.01834583282470703
+bitchebe.preproc_time:  0.01767277717590332
+bitchebe.preproc_time:  0.018135547637939453
+bitchebe.preproc_time:  0.01860189437866211
+bitchebe.preproc_time:  0.018695354461669922
+bitchebe.preproc_time:  0.01885986328125
+bitchebe.preproc_time:  0.017951488494873047
+bitchebe.preproc_time:  0.01768016815185547
+bitchebe.preproc_time:  0.01796102523803711
+bitchebe.preproc_time:  0.0172274112701416
+bitchebe.preproc_time:  0.01839923858642578
+bitchebe.preproc_time:  0.018683910369873047
+bitchebe.preproc_time:  0.018683195114135742
+bitchebe.preproc_time:  0.018433332443237305
+bitchebe.preproc_time:  0.018572330474853516
+bitchebe.preproc_time:  0.017826080322265625
+bitchebe.preproc_time:  0.017879962921142578
+bitchebe.preproc_time:  0.018482208251953125
+bitchebe.preproc_time:  0.018574953079223633
+bitchebe.preproc_time:  0.019039154052734375
+bitchebe.preproc_time:  0.018706083297729492
+bitchebe.preproc_time:  0.034467220306396484
+bitchebe.preproc_time:  0.019160985946655273
+bitchebe.preproc_time:  0.019054889678955078
+bitchebe.preproc_time:  0.01956319808959961
+bitchebe.preproc_time:  0.018849611282348633
+bitchebe.preproc_time:  0.018837690353393555
+bitchebe.preproc_time:  0.018412113189697266
+bitchebe.preproc_time:  0.019131183624267578
+bitchebe.preproc_time:  0.018514633178710938
+bitchebe.preproc_time:  0.018737316131591797
+bitchebe.preproc_time:  0.01907825469970703
+bitchebe.preproc_time:  0.01914525032043457
+bitchebe.preproc_time:  0.01920294761657715
+bitchebe.preproc_time:  0.019118070602416992
+DLL 2023-11-20 15:24:56.654422 - epoch    1 | iter    9/27 | loss   17.66 | utts/s    33 | took 31.10 s | train_grad-norm :  0.0 | train_seq-len-min :  66 | train_seq-len-max :  611 | lrate 1.43e-03
+bitchebe.preproc_time:  0.0002963542938232422
+bitchebe.preproc_time:  0.021203041076660156
+bitchebe.preproc_time:  0.020064115524291992
+bitchebe.preproc_time:  0.021260738372802734
+bitchebe.preproc_time:  0.01993393898010254
+bitchebe.preproc_time:  0.018162250518798828
+bitchebe.preproc_time:  0.018066883087158203
+bitchebe.preproc_time:  0.01865839958190918
+bitchebe.preproc_time:  0.017206192016601562
+bitchebe.preproc_time:  0.0178983211517334
+bitchebe.preproc_time:  0.018062114715576172
+bitchebe.preproc_time:  0.018265724182128906
+bitchebe.preproc_time:  0.017980098724365234
+bitchebe.preproc_time:  0.017318010330200195
+bitchebe.preproc_time:  0.018050432205200195
+bitchebe.preproc_time:  0.018208742141723633
+bitchebe.preproc_time:  0.017689228057861328
+bitchebe.preproc_time:  0.018634557723999023
+bitchebe.preproc_time:  0.017035722732543945
+bitchebe.preproc_time:  0.018206357955932617
+bitchebe.preproc_time:  0.017836570739746094
+bitchebe.preproc_time:  0.0179290771484375
+bitchebe.preproc_time:  0.017616748809814453
+bitchebe.preproc_time:  0.017630815505981445
+bitchebe.preproc_time:  0.018346786499023438
+bitchebe.preproc_time:  0.018281936645507812
+bitchebe.preproc_time:  0.018679141998291016
+bitchebe.preproc_time:  0.018519878387451172
+bitchebe.preproc_time:  0.01770496368408203
+bitchebe.preproc_time:  0.01753687858581543
+bitchebe.preproc_time:  0.01719832420349121
+bitchebe.preproc_time:  0.01756739616394043
+bitchebe.preproc_time:  0.01802682876586914
+bitchebe.preproc_time:  0.018412351608276367
+bitchebe.preproc_time:  0.017799854278564453
+bitchebe.preproc_time:  0.018619060516357422
+bitchebe.preproc_time:  0.018027305603027344
+bitchebe.preproc_time:  0.017867088317871094
+bitchebe.preproc_time:  0.01849818229675293
+bitchebe.preproc_time:  0.018063068389892578
+bitchebe.preproc_time:  0.018056154251098633
+bitchebe.preproc_time:  0.018184423446655273
+bitchebe.preproc_time:  0.018459796905517578
+bitchebe.preproc_time:  0.018290042877197266
+bitchebe.preproc_time:  0.018743515014648438
+bitchebe.preproc_time:  0.01846790313720703
+bitchebe.preproc_time:  0.01879739761352539
+bitchebe.preproc_time:  0.018474817276000977
+bitchebe.preproc_time:  0.018483400344848633
+bitchebe.preproc_time:  0.01879286766052246
+bitchebe.preproc_time:  0.018861055374145508
+bitchebe.preproc_time:  0.017872333526611328
+bitchebe.preproc_time:  0.01825571060180664
+bitchebe.preproc_time:  0.01912689208984375
+bitchebe.preproc_time:  0.018162250518798828
+bitchebe.preproc_time:  0.017726659774780273
+bitchebe.preproc_time:  0.018303632736206055
+bitchebe.preproc_time:  0.018456459045410156
+bitchebe.preproc_time:  0.018452882766723633
+bitchebe.preproc_time:  0.018990516662597656
+bitchebe.preproc_time:  0.019304990768432617
+bitchebe.preproc_time:  0.017905235290527344
+bitchebe.preproc_time:  0.019086837768554688
+bitchebe.preproc_time:  0.019387006759643555
+bitchebe.preproc_time:  0.017924785614013672
+DLL 2023-11-20 15:25:28.048482 - epoch    1 | iter   10/27 | loss   19.07 | utts/s    33 | took 31.31 s | train_grad-norm :  0.0 | train_seq-len-min :  65 | train_seq-len-max :  625 | lrate 1.57e-03
+bitchebe.preproc_time:  0.0002639293670654297
+bitchebe.preproc_time:  0.024915218353271484
+bitchebe.preproc_time:  0.018323898315429688
+bitchebe.preproc_time:  0.021351099014282227
+bitchebe.preproc_time:  0.021120309829711914
+bitchebe.preproc_time:  0.021454572677612305
+bitchebe.preproc_time:  0.021065950393676758
+bitchebe.preproc_time:  0.021151304244995117
+bitchebe.preproc_time:  0.018802642822265625
+bitchebe.preproc_time:  0.018897294998168945
+bitchebe.preproc_time:  0.019052743911743164
+bitchebe.preproc_time:  0.01857280731201172
+bitchebe.preproc_time:  0.018040895462036133
+bitchebe.preproc_time:  0.018165111541748047
+bitchebe.preproc_time:  0.018695831298828125
+bitchebe.preproc_time:  0.018333911895751953
+bitchebe.preproc_time:  0.01773977279663086
+bitchebe.preproc_time:  0.017499446868896484
+bitchebe.preproc_time:  0.01751852035522461
+bitchebe.preproc_time:  0.01726675033569336
+bitchebe.preproc_time:  0.017821073532104492
+bitchebe.preproc_time:  0.01900482177734375
+bitchebe.preproc_time:  0.01812601089477539
+bitchebe.preproc_time:  0.018700122833251953
+bitchebe.preproc_time:  0.018416643142700195
+bitchebe.preproc_time:  0.018501758575439453
+bitchebe.preproc_time:  0.019022703170776367
+bitchebe.preproc_time:  0.018815040588378906
+bitchebe.preproc_time:  0.018836498260498047
+bitchebe.preproc_time:  0.018839597702026367
+bitchebe.preproc_time:  0.01807856559753418
+bitchebe.preproc_time:  0.018504619598388672
+bitchebe.preproc_time:  0.018424272537231445
+bitchebe.preproc_time:  0.01871204376220703
+bitchebe.preproc_time:  0.01769733428955078
+bitchebe.preproc_time:  0.01859307289123535
+bitchebe.preproc_time:  0.01839303970336914
+bitchebe.preproc_time:  0.019071578979492188
+bitchebe.preproc_time:  0.017374038696289062
+bitchebe.preproc_time:  0.018111705780029297
+bitchebe.preproc_time:  0.0180056095123291
+bitchebe.preproc_time:  0.018772125244140625
+bitchebe.preproc_time:  0.018918275833129883
+bitchebe.preproc_time:  0.018135547637939453
+bitchebe.preproc_time:  0.018810510635375977
+bitchebe.preproc_time:  0.017596960067749023
+bitchebe.preproc_time:  0.018791675567626953
+bitchebe.preproc_time:  0.018691539764404297
+bitchebe.preproc_time:  0.018393754959106445
+bitchebe.preproc_time:  0.018999576568603516
+bitchebe.preproc_time:  0.01841282844543457
+bitchebe.preproc_time:  0.01842808723449707
+bitchebe.preproc_time:  0.01769399642944336
+bitchebe.preproc_time:  0.018528223037719727
+bitchebe.preproc_time:  0.018467187881469727
+bitchebe.preproc_time:  0.017066001892089844
+bitchebe.preproc_time:  0.01623392105102539
+bitchebe.preproc_time:  0.015859603881835938
+bitchebe.preproc_time:  0.016625404357910156
+bitchebe.preproc_time:  0.015631437301635742
+bitchebe.preproc_time:  0.018580198287963867
+bitchebe.preproc_time:  0.01647353172302246
+bitchebe.preproc_time:  0.01555490493774414
+bitchebe.preproc_time:  0.01634526252746582
+bitchebe.preproc_time:  0.016606569290161133
+DLL 2023-11-20 15:25:59.434046 - epoch    1 | iter   11/27 | loss   29.84 | utts/s    33 | took 31.31 s | train_grad-norm :  0.0 | train_seq-len-min :  62 | train_seq-len-max :  638 | lrate 1.71e-03
+bitchebe.preproc_time:  0.0001850128173828125
+bitchebe.preproc_time:  0.01643228530883789
+bitchebe.preproc_time:  0.016530513763427734
+bitchebe.preproc_time:  0.0162045955657959
+bitchebe.preproc_time:  0.016358375549316406
+bitchebe.preproc_time:  0.016510963439941406
+bitchebe.preproc_time:  0.015788793563842773
+bitchebe.preproc_time:  0.016034603118896484
+bitchebe.preproc_time:  0.01536250114440918
+bitchebe.preproc_time:  0.016299009323120117
+bitchebe.preproc_time:  0.016483306884765625
+bitchebe.preproc_time:  0.016291141510009766
+bitchebe.preproc_time:  0.016553640365600586
+bitchebe.preproc_time:  0.01640939712524414
+bitchebe.preproc_time:  0.01615738868713379
+bitchebe.preproc_time:  0.016160249710083008
+bitchebe.preproc_time:  0.01576685905456543
+bitchebe.preproc_time:  0.016196489334106445
+bitchebe.preproc_time:  0.015744686126708984
+bitchebe.preproc_time:  0.016469478607177734
+bitchebe.preproc_time:  0.016173601150512695
+bitchebe.preproc_time:  0.014729738235473633
+bitchebe.preproc_time:  0.01577925682067871
+bitchebe.preproc_time:  0.015926599502563477
+bitchebe.preproc_time:  0.016280174255371094
+bitchebe.preproc_time:  0.016083478927612305
+bitchebe.preproc_time:  0.015941619873046875
+bitchebe.preproc_time:  0.016072750091552734
+bitchebe.preproc_time:  0.016583919525146484
+bitchebe.preproc_time:  0.015598773956298828
+bitchebe.preproc_time:  0.014806509017944336
+bitchebe.preproc_time:  0.01573634147644043
+bitchebe.preproc_time:  0.01671910285949707
+bitchebe.preproc_time:  0.016271352767944336
+bitchebe.preproc_time:  0.016453266143798828
+bitchebe.preproc_time:  0.016275882720947266
+bitchebe.preproc_time:  0.016532421112060547
+bitchebe.preproc_time:  0.016536951065063477
+bitchebe.preproc_time:  0.01643848419189453
+bitchebe.preproc_time:  0.01657247543334961
+bitchebe.preproc_time:  0.016493558883666992
+bitchebe.preproc_time:  0.016440629959106445
+bitchebe.preproc_time:  0.015975236892700195
+bitchebe.preproc_time:  0.016054153442382812
+bitchebe.preproc_time:  0.015911102294921875
+bitchebe.preproc_time:  0.015033483505249023
+bitchebe.preproc_time:  0.014564037322998047
+bitchebe.preproc_time:  0.01584148406982422
+bitchebe.preproc_time:  0.015820980072021484
+bitchebe.preproc_time:  0.01508021354675293
+bitchebe.preproc_time:  0.015609025955200195
+bitchebe.preproc_time:  0.016310930252075195
+bitchebe.preproc_time:  0.0156252384185791
+bitchebe.preproc_time:  0.015866518020629883
+bitchebe.preproc_time:  0.015221834182739258
+bitchebe.preproc_time:  0.01682734489440918
+bitchebe.preproc_time:  0.017053842544555664
+bitchebe.preproc_time:  0.017219066619873047
+bitchebe.preproc_time:  0.015509843826293945
+bitchebe.preproc_time:  0.01673102378845215
+bitchebe.preproc_time:  0.016292572021484375
+bitchebe.preproc_time:  0.016248226165771484
+bitchebe.preproc_time:  0.01608443260192871
+bitchebe.preproc_time:  0.016056299209594727
+bitchebe.preproc_time:  0.016956806182861328
+DLL 2023-11-20 15:26:30.506227 - epoch    1 | iter   12/27 | loss   14.57 | utts/s    33 | took 31.00 s | train_grad-norm :  0.0 | train_seq-len-min :  73 | train_seq-len-max :  618 | lrate 1.86e-03
+bitchebe.preproc_time:  0.00019288063049316406
+bitchebe.preproc_time:  0.016503095626831055
+bitchebe.preproc_time:  0.01661372184753418
+bitchebe.preproc_time:  0.01588892936706543
+bitchebe.preproc_time:  0.018532276153564453
+bitchebe.preproc_time:  0.015427589416503906
+bitchebe.preproc_time:  0.015562057495117188
+bitchebe.preproc_time:  0.0161135196685791
+bitchebe.preproc_time:  0.015094280242919922
+bitchebe.preproc_time:  0.016026973724365234
+bitchebe.preproc_time:  0.01524806022644043
+bitchebe.preproc_time:  0.01866436004638672
+bitchebe.preproc_time:  0.01515650749206543
+bitchebe.preproc_time:  0.015858888626098633
+bitchebe.preproc_time:  0.015906095504760742
+bitchebe.preproc_time:  0.016318082809448242
+bitchebe.preproc_time:  0.016263723373413086
+bitchebe.preproc_time:  0.01631641387939453
+bitchebe.preproc_time:  0.016242027282714844
+bitchebe.preproc_time:  0.015371084213256836
+bitchebe.preproc_time:  0.016170978546142578
+bitchebe.preproc_time:  0.01567983627319336
+bitchebe.preproc_time:  0.015598297119140625
+bitchebe.preproc_time:  0.015351057052612305
+bitchebe.preproc_time:  0.015837430953979492
+bitchebe.preproc_time:  0.016327381134033203
+bitchebe.preproc_time:  0.016323089599609375
+bitchebe.preproc_time:  0.016705036163330078
+bitchebe.preproc_time:  0.016427278518676758
+bitchebe.preproc_time:  0.016237735748291016
+bitchebe.preproc_time:  0.016460895538330078
+bitchebe.preproc_time:  0.015580415725708008
+bitchebe.preproc_time:  0.015334367752075195
+bitchebe.preproc_time:  0.016379833221435547
+bitchebe.preproc_time:  0.016312599182128906
+bitchebe.preproc_time:  0.016252756118774414
+bitchebe.preproc_time:  0.015399694442749023
+bitchebe.preproc_time:  0.015439748764038086
+bitchebe.preproc_time:  0.016060352325439453
+bitchebe.preproc_time:  0.015741825103759766
+bitchebe.preproc_time:  0.015619754791259766
+bitchebe.preproc_time:  0.016547679901123047
+bitchebe.preproc_time:  0.015307188034057617
+bitchebe.preproc_time:  0.016602516174316406
+bitchebe.preproc_time:  0.01631903648376465
+bitchebe.preproc_time:  0.016429901123046875
+bitchebe.preproc_time:  0.015289545059204102
+bitchebe.preproc_time:  0.015048503875732422
+bitchebe.preproc_time:  0.016376256942749023
+bitchebe.preproc_time:  0.01583719253540039
+bitchebe.preproc_time:  0.016520261764526367
+bitchebe.preproc_time:  0.016307353973388672
+bitchebe.preproc_time:  0.015545845031738281
+bitchebe.preproc_time:  0.01679706573486328
+bitchebe.preproc_time:  0.015955686569213867
+bitchebe.preproc_time:  0.01653146743774414
+bitchebe.preproc_time:  0.01598358154296875
+bitchebe.preproc_time:  0.01627826690673828
+bitchebe.preproc_time:  0.017307758331298828
+bitchebe.preproc_time:  0.01663064956665039
+bitchebe.preproc_time:  0.016935110092163086
+bitchebe.preproc_time:  0.016286134719848633
+bitchebe.preproc_time:  0.015010595321655273
+bitchebe.preproc_time:  0.016145944595336914
+bitchebe.preproc_time:  0.025287866592407227
+DLL 2023-11-20 15:27:00.962041 - epoch    1 | iter   13/27 | loss   16.41 | utts/s    34 | took 30.38 s | train_grad-norm :  0.0 | train_seq-len-min :  61 | train_seq-len-max :  627 | lrate 2.00e-03
+bitchebe.preproc_time:  0.00016307830810546875
+bitchebe.preproc_time:  0.0173947811126709
+bitchebe.preproc_time:  0.015129804611206055
+bitchebe.preproc_time:  0.016489267349243164
+bitchebe.preproc_time:  0.015414714813232422
+bitchebe.preproc_time:  0.01475381851196289
+bitchebe.preproc_time:  0.014911174774169922
+bitchebe.preproc_time:  0.015902042388916016
+bitchebe.preproc_time:  0.015757083892822266
+bitchebe.preproc_time:  0.01559305191040039
+bitchebe.preproc_time:  0.015519142150878906
+bitchebe.preproc_time:  0.015762805938720703
+bitchebe.preproc_time:  0.015804529190063477
+bitchebe.preproc_time:  0.016892194747924805
+bitchebe.preproc_time:  0.017035961151123047
+bitchebe.preproc_time:  0.015654325485229492
+bitchebe.preproc_time:  0.015018224716186523
+bitchebe.preproc_time:  0.015079736709594727
+bitchebe.preproc_time:  0.014861822128295898
+bitchebe.preproc_time:  0.015865325927734375
+bitchebe.preproc_time:  0.01528620719909668
+bitchebe.preproc_time:  0.017980337142944336
+bitchebe.preproc_time:  0.01483154296875
+bitchebe.preproc_time:  0.01551198959350586
+bitchebe.preproc_time:  0.015979766845703125
+bitchebe.preproc_time:  0.015625953674316406
+bitchebe.preproc_time:  0.016108989715576172
+bitchebe.preproc_time:  0.0162355899810791
+bitchebe.preproc_time:  0.01619744300842285
+bitchebe.preproc_time:  0.016150236129760742
+bitchebe.preproc_time:  0.015189409255981445
+bitchebe.preproc_time:  0.015257596969604492
+bitchebe.preproc_time:  0.01538228988647461
+bitchebe.preproc_time:  0.01625537872314453
+bitchebe.preproc_time:  0.01535177230834961
+bitchebe.preproc_time:  0.01579737663269043
+bitchebe.preproc_time:  0.01599860191345215
+bitchebe.preproc_time:  0.015423774719238281
+bitchebe.preproc_time:  0.016167163848876953
+bitchebe.preproc_time:  0.015628576278686523
+bitchebe.preproc_time:  0.015438318252563477
+bitchebe.preproc_time:  0.015403270721435547
+bitchebe.preproc_time:  0.015795230865478516
+bitchebe.preproc_time:  0.01564955711364746
+bitchebe.preproc_time:  0.015193462371826172
+bitchebe.preproc_time:  0.01590871810913086
+bitchebe.preproc_time:  0.016109943389892578
+bitchebe.preproc_time:  0.016228914260864258
+bitchebe.preproc_time:  0.015273332595825195
+bitchebe.preproc_time:  0.016062259674072266
+bitchebe.preproc_time:  0.016206979751586914
+bitchebe.preproc_time:  0.01600790023803711
+bitchebe.preproc_time:  0.0153350830078125
+bitchebe.preproc_time:  0.016184329986572266
+bitchebe.preproc_time:  0.0158083438873291
+bitchebe.preproc_time:  0.015822649002075195
+bitchebe.preproc_time:  0.01600360870361328
+bitchebe.preproc_time:  0.01564192771911621
+bitchebe.preproc_time:  0.016231298446655273
+bitchebe.preproc_time:  0.01499032974243164
+bitchebe.preproc_time:  0.0158236026763916
+bitchebe.preproc_time:  0.015876054763793945
+bitchebe.preproc_time:  0.015970706939697266
+bitchebe.preproc_time:  0.015954017639160156
+bitchebe.preproc_time:  0.016637086868286133
+DLL 2023-11-20 15:27:31.605698 - epoch    1 | iter   14/27 | loss   26.94 | utts/s    33 | took 30.57 s | train_grad-norm :  0.0 | train_seq-len-min :  65 | train_seq-len-max :  619 | lrate 2.14e-03
+bitchebe.preproc_time:  0.00025391578674316406
+bitchebe.preproc_time:  0.01831817626953125
+bitchebe.preproc_time:  0.016515493392944336
+bitchebe.preproc_time:  0.016769886016845703
+bitchebe.preproc_time:  0.016027450561523438
+bitchebe.preproc_time:  0.015418052673339844
+bitchebe.preproc_time:  0.016182661056518555
+bitchebe.preproc_time:  0.01571369171142578
+bitchebe.preproc_time:  0.01637554168701172
+bitchebe.preproc_time:  0.015668153762817383
+bitchebe.preproc_time:  0.015587568283081055
+bitchebe.preproc_time:  0.01605224609375
+bitchebe.preproc_time:  0.015593767166137695
+bitchebe.preproc_time:  0.015215158462524414
+bitchebe.preproc_time:  0.016155004501342773
+bitchebe.preproc_time:  0.01633429527282715
+bitchebe.preproc_time:  0.015822887420654297
+bitchebe.preproc_time:  0.015166044235229492
+bitchebe.preproc_time:  0.015430212020874023
+bitchebe.preproc_time:  0.014814376831054688
+bitchebe.preproc_time:  0.01620960235595703
+bitchebe.preproc_time:  0.015664339065551758
+bitchebe.preproc_time:  0.019319534301757812
+bitchebe.preproc_time:  0.016315460205078125
+bitchebe.preproc_time:  0.01717853546142578
+bitchebe.preproc_time:  0.016669511795043945
+bitchebe.preproc_time:  0.018114089965820312
+bitchebe.preproc_time:  0.016081571578979492
+bitchebe.preproc_time:  0.015709877014160156
+bitchebe.preproc_time:  0.01731419563293457
+bitchebe.preproc_time:  0.015746116638183594
+bitchebe.preproc_time:  0.01577448844909668
+bitchebe.preproc_time:  0.015649795532226562
+bitchebe.preproc_time:  0.015161752700805664
+bitchebe.preproc_time:  0.01598215103149414
+bitchebe.preproc_time:  0.01529693603515625
+bitchebe.preproc_time:  0.01616191864013672
+bitchebe.preproc_time:  0.014488458633422852
+bitchebe.preproc_time:  0.015895366668701172
+bitchebe.preproc_time:  0.014523029327392578
+bitchebe.preproc_time:  0.015636920928955078
+bitchebe.preproc_time:  0.016017436981201172
+bitchebe.preproc_time:  0.01622295379638672
+bitchebe.preproc_time:  0.015958309173583984
+bitchebe.preproc_time:  0.015971660614013672
+bitchebe.preproc_time:  0.01553654670715332
+bitchebe.preproc_time:  0.01609182357788086
+bitchebe.preproc_time:  0.015156030654907227
+bitchebe.preproc_time:  0.015522956848144531
+bitchebe.preproc_time:  0.015482187271118164
+bitchebe.preproc_time:  0.018524885177612305
+bitchebe.preproc_time:  0.015306949615478516
+bitchebe.preproc_time:  0.015670061111450195
+bitchebe.preproc_time:  0.016085147857666016
+bitchebe.preproc_time:  0.015465259552001953
+bitchebe.preproc_time:  0.01609516143798828
+bitchebe.preproc_time:  0.014982223510742188
+bitchebe.preproc_time:  0.01566910743713379
+bitchebe.preproc_time:  0.015371084213256836
+bitchebe.preproc_time:  0.015801191329956055
+bitchebe.preproc_time:  0.015589237213134766
+bitchebe.preproc_time:  0.015938997268676758
+bitchebe.preproc_time:  0.01588916778564453
+bitchebe.preproc_time:  0.016032934188842773
+bitchebe.preproc_time:  0.018451690673828125
+DLL 2023-11-20 15:28:02.731454 - epoch    1 | iter   15/27 | loss   26.63 | utts/s    33 | took 31.05 s | train_grad-norm :  0.0 | train_seq-len-min :  60 | train_seq-len-max :  626 | lrate 2.29e-03
+bitchebe.preproc_time:  0.00018215179443359375
+bitchebe.preproc_time:  0.024428844451904297
+bitchebe.preproc_time:  0.0165102481842041
+bitchebe.preproc_time:  0.016205549240112305
+bitchebe.preproc_time:  0.016209125518798828
+bitchebe.preproc_time:  0.01654195785522461
+bitchebe.preproc_time:  0.015977859497070312
+bitchebe.preproc_time:  0.016178369522094727
+bitchebe.preproc_time:  0.015996694564819336
+bitchebe.preproc_time:  0.01594996452331543
+bitchebe.preproc_time:  0.015741586685180664
+bitchebe.preproc_time:  0.015437602996826172
+bitchebe.preproc_time:  0.01588129997253418
+bitchebe.preproc_time:  0.015855073928833008
+bitchebe.preproc_time:  0.01588153839111328
+bitchebe.preproc_time:  0.015925884246826172
+bitchebe.preproc_time:  0.015436649322509766
+bitchebe.preproc_time:  0.0158078670501709
+bitchebe.preproc_time:  0.016294002532958984
+bitchebe.preproc_time:  0.015390634536743164
+bitchebe.preproc_time:  0.016000032424926758
+bitchebe.preproc_time:  0.016581058502197266
+bitchebe.preproc_time:  0.016130447387695312
+bitchebe.preproc_time:  0.01575922966003418
+bitchebe.preproc_time:  0.01584315299987793
+bitchebe.preproc_time:  0.01578497886657715
+bitchebe.preproc_time:  0.015474081039428711
+bitchebe.preproc_time:  0.018672704696655273
+bitchebe.preproc_time:  0.015129566192626953
+bitchebe.preproc_time:  0.015361547470092773
+bitchebe.preproc_time:  0.015867948532104492
+bitchebe.preproc_time:  0.015938282012939453
+bitchebe.preproc_time:  0.015345573425292969
+bitchebe.preproc_time:  0.015995264053344727
+bitchebe.preproc_time:  0.015341520309448242
+bitchebe.preproc_time:  0.015222787857055664
+bitchebe.preproc_time:  0.017678260803222656
+bitchebe.preproc_time:  0.01540064811706543
+bitchebe.preproc_time:  0.015844345092773438
+bitchebe.preproc_time:  0.01982259750366211
+bitchebe.preproc_time:  0.015346527099609375
+bitchebe.preproc_time:  0.015260934829711914
+bitchebe.preproc_time:  0.015210866928100586
+bitchebe.preproc_time:  0.015474557876586914
+bitchebe.preproc_time:  0.016047000885009766
+bitchebe.preproc_time:  0.01606464385986328
+bitchebe.preproc_time:  0.015758991241455078
+bitchebe.preproc_time:  0.015039443969726562
+bitchebe.preproc_time:  0.01448512077331543
+bitchebe.preproc_time:  0.015863418579101562
+bitchebe.preproc_time:  0.015784502029418945
+bitchebe.preproc_time:  0.016074419021606445
+bitchebe.preproc_time:  0.015972137451171875
+bitchebe.preproc_time:  0.01562976837158203
+bitchebe.preproc_time:  0.01556849479675293
+bitchebe.preproc_time:  0.015909671783447266
+bitchebe.preproc_time:  0.015329599380493164
+bitchebe.preproc_time:  0.014904975891113281
+bitchebe.preproc_time:  0.015595674514770508
+bitchebe.preproc_time:  0.015320301055908203
+bitchebe.preproc_time:  0.01604914665222168
+bitchebe.preproc_time:  0.015908002853393555
+bitchebe.preproc_time:  0.014964103698730469
+bitchebe.preproc_time:  0.01603841781616211
+bitchebe.preproc_time:  0.015825748443603516
+DLL 2023-11-20 15:28:33.403689 - epoch    1 | iter   16/27 | loss   26.95 | utts/s    33 | took 30.60 s | train_grad-norm :  0.0 | train_seq-len-min :  62 | train_seq-len-max :  620 | lrate 2.43e-03
+bitchebe.preproc_time:  0.00014209747314453125
+bitchebe.preproc_time:  0.017801761627197266
+bitchebe.preproc_time:  0.015774250030517578
+bitchebe.preproc_time:  0.015811920166015625
+bitchebe.preproc_time:  0.015290498733520508
+bitchebe.preproc_time:  0.01520538330078125
+bitchebe.preproc_time:  0.015738725662231445
+bitchebe.preproc_time:  0.01621866226196289
+bitchebe.preproc_time:  0.015883922576904297
+bitchebe.preproc_time:  0.015479564666748047
+bitchebe.preproc_time:  0.016049623489379883
+bitchebe.preproc_time:  0.014735937118530273
+bitchebe.preproc_time:  0.015781641006469727
+bitchebe.preproc_time:  0.015738964080810547
+bitchebe.preproc_time:  0.015596151351928711
+bitchebe.preproc_time:  0.015954256057739258
+bitchebe.preproc_time:  0.01608109474182129
+bitchebe.preproc_time:  0.015584468841552734
+bitchebe.preproc_time:  0.01584029197692871
+bitchebe.preproc_time:  0.015927791595458984
+bitchebe.preproc_time:  0.015856504440307617
+bitchebe.preproc_time:  0.01579880714416504
+bitchebe.preproc_time:  0.015034675598144531
+bitchebe.preproc_time:  0.015625953674316406
+bitchebe.preproc_time:  0.0158231258392334
+bitchebe.preproc_time:  0.015729188919067383
+bitchebe.preproc_time:  0.015984296798706055
+bitchebe.preproc_time:  0.01574850082397461
+bitchebe.preproc_time:  0.015626192092895508
+bitchebe.preproc_time:  0.01589179039001465
+bitchebe.preproc_time:  0.015931367874145508
+bitchebe.preproc_time:  0.015827417373657227
+bitchebe.preproc_time:  0.015949010848999023
+bitchebe.preproc_time:  0.014536380767822266
+bitchebe.preproc_time:  0.015208959579467773
+bitchebe.preproc_time:  0.01627326011657715
+bitchebe.preproc_time:  0.015675067901611328
+bitchebe.preproc_time:  0.015908479690551758
+bitchebe.preproc_time:  0.015250921249389648
+bitchebe.preproc_time:  0.016858816146850586
+bitchebe.preproc_time:  0.01777815818786621
+bitchebe.preproc_time:  0.015829086303710938
+bitchebe.preproc_time:  0.01612687110900879
+bitchebe.preproc_time:  0.015349149703979492
+bitchebe.preproc_time:  0.0156402587890625
+bitchebe.preproc_time:  0.015781641006469727
+bitchebe.preproc_time:  0.023455381393432617
+bitchebe.preproc_time:  0.020908117294311523
+bitchebe.preproc_time:  0.023369789123535156
+bitchebe.preproc_time:  0.023331880569458008
+bitchebe.preproc_time:  0.016439437866210938
+bitchebe.preproc_time:  0.0169222354888916
+bitchebe.preproc_time:  0.01871943473815918
+bitchebe.preproc_time:  0.019287586212158203
+bitchebe.preproc_time:  0.019427776336669922
+bitchebe.preproc_time:  0.018991708755493164
+bitchebe.preproc_time:  0.019223928451538086
+bitchebe.preproc_time:  0.0188143253326416
+bitchebe.preproc_time:  0.01654195785522461
+bitchebe.preproc_time:  0.016345500946044922
+bitchebe.preproc_time:  0.016183853149414062
+bitchebe.preproc_time:  0.016148090362548828
+bitchebe.preproc_time:  0.015390396118164062
+bitchebe.preproc_time:  0.016414880752563477
+bitchebe.preproc_time:  0.016293764114379883
+DLL 2023-11-20 15:29:06.148071 - epoch    1 | iter   17/27 | loss   33.41 | utts/s    31 | took 32.67 s | train_grad-norm :  0.0 | train_seq-len-min :  41 | train_seq-len-max :  637 | lrate 2.57e-03
+bitchebe.preproc_time:  0.0001919269561767578
+bitchebe.preproc_time:  0.017583370208740234
+bitchebe.preproc_time:  0.01635432243347168
+bitchebe.preproc_time:  0.016147613525390625
+bitchebe.preproc_time:  0.01586127281188965
+bitchebe.preproc_time:  0.016407251358032227
+bitchebe.preproc_time:  0.016669273376464844
+bitchebe.preproc_time:  0.017260074615478516
+bitchebe.preproc_time:  0.016916275024414062
+bitchebe.preproc_time:  0.01625537872314453
+bitchebe.preproc_time:  0.01666712760925293
+bitchebe.preproc_time:  0.015590429306030273
+bitchebe.preproc_time:  0.016112804412841797
+bitchebe.preproc_time:  0.016300439834594727
+bitchebe.preproc_time:  0.01640772819519043
+bitchebe.preproc_time:  0.016428709030151367
+bitchebe.preproc_time:  0.016368627548217773
+bitchebe.preproc_time:  0.01631021499633789
+bitchebe.preproc_time:  0.016457557678222656
+bitchebe.preproc_time:  0.01578235626220703
+bitchebe.preproc_time:  0.016186952590942383
+bitchebe.preproc_time:  0.016305923461914062
+bitchebe.preproc_time:  0.015174388885498047
+bitchebe.preproc_time:  0.016123056411743164
+bitchebe.preproc_time:  0.0162353515625
+bitchebe.preproc_time:  0.01646566390991211
+bitchebe.preproc_time:  0.01573491096496582
+bitchebe.preproc_time:  0.016170501708984375
+bitchebe.preproc_time:  0.015618562698364258
+bitchebe.preproc_time:  0.015852689743041992
+bitchebe.preproc_time:  0.015900135040283203
+bitchebe.preproc_time:  0.015595197677612305
+bitchebe.preproc_time:  0.01595449447631836
+bitchebe.preproc_time:  0.015499114990234375
+bitchebe.preproc_time:  0.015552759170532227
+bitchebe.preproc_time:  0.01623821258544922
+bitchebe.preproc_time:  0.016390085220336914
+bitchebe.preproc_time:  0.015603065490722656
+bitchebe.preproc_time:  0.01624274253845215
+bitchebe.preproc_time:  0.018420696258544922
+bitchebe.preproc_time:  0.017129182815551758
+bitchebe.preproc_time:  0.015836477279663086
+bitchebe.preproc_time:  0.015285730361938477
+bitchebe.preproc_time:  0.01634049415588379
+bitchebe.preproc_time:  0.016439199447631836
+bitchebe.preproc_time:  0.016411781311035156
+bitchebe.preproc_time:  0.0161435604095459
+bitchebe.preproc_time:  0.01685476303100586
+bitchebe.preproc_time:  0.015557527542114258
+bitchebe.preproc_time:  0.01682138442993164
+bitchebe.preproc_time:  0.016511201858520508
+bitchebe.preproc_time:  0.016650915145874023
+bitchebe.preproc_time:  0.016345500946044922
+bitchebe.preproc_time:  0.01924276351928711
+bitchebe.preproc_time:  0.015752792358398438
+bitchebe.preproc_time:  0.01606440544128418
+bitchebe.preproc_time:  0.017009973526000977
+bitchebe.preproc_time:  0.018662452697753906
+bitchebe.preproc_time:  0.017890214920043945
+bitchebe.preproc_time:  0.018271207809448242
+bitchebe.preproc_time:  0.01825261116027832
+bitchebe.preproc_time:  0.0178375244140625
+bitchebe.preproc_time:  0.017863988876342773
+bitchebe.preproc_time:  0.018040895462036133
+bitchebe.preproc_time:  0.01822066307067871
+DLL 2023-11-20 15:29:37.251279 - epoch    1 | iter   18/27 | loss   26.94 | utts/s    33 | took 31.02 s | train_grad-norm :  0.0 | train_seq-len-min :  66 | train_seq-len-max :  629 | lrate 2.71e-03
+bitchebe.preproc_time:  0.00042176246643066406
+bitchebe.preproc_time:  0.018706798553466797
+bitchebe.preproc_time:  0.017629146575927734
+bitchebe.preproc_time:  0.018074750900268555
+bitchebe.preproc_time:  0.018249034881591797
+bitchebe.preproc_time:  0.017473459243774414
+bitchebe.preproc_time:  0.018283367156982422
+bitchebe.preproc_time:  0.017730712890625
+bitchebe.preproc_time:  0.017914533615112305
+bitchebe.preproc_time:  0.01770305633544922
+bitchebe.preproc_time:  0.01776123046875
+bitchebe.preproc_time:  0.018517017364501953
+bitchebe.preproc_time:  0.018166065216064453
+bitchebe.preproc_time:  0.017825841903686523
+bitchebe.preproc_time:  0.018047809600830078
+bitchebe.preproc_time:  0.01779484748840332
+bitchebe.preproc_time:  0.018460750579833984
+bitchebe.preproc_time:  0.01818561553955078
+bitchebe.preproc_time:  0.018507719039916992
+bitchebe.preproc_time:  0.018360137939453125
+bitchebe.preproc_time:  0.018917560577392578
+bitchebe.preproc_time:  0.01851034164428711
+bitchebe.preproc_time:  0.0180356502532959
+bitchebe.preproc_time:  0.018012046813964844
+bitchebe.preproc_time:  0.018691301345825195
+bitchebe.preproc_time:  0.01788806915283203
+bitchebe.preproc_time:  0.018065452575683594
+bitchebe.preproc_time:  0.01763749122619629
+bitchebe.preproc_time:  0.01764535903930664
+bitchebe.preproc_time:  0.018440723419189453
+bitchebe.preproc_time:  0.018434762954711914
+bitchebe.preproc_time:  0.018336772918701172
+bitchebe.preproc_time:  0.018001794815063477
+bitchebe.preproc_time:  0.017511606216430664
+bitchebe.preproc_time:  0.018351316452026367
+bitchebe.preproc_time:  0.017675399780273438
+bitchebe.preproc_time:  0.018580913543701172
+bitchebe.preproc_time:  0.01881098747253418
+bitchebe.preproc_time:  0.017744064331054688
+bitchebe.preproc_time:  0.01769280433654785
+bitchebe.preproc_time:  0.019043922424316406
+bitchebe.preproc_time:  0.01810002326965332
+bitchebe.preproc_time:  0.0180816650390625
+bitchebe.preproc_time:  0.01756596565246582
+bitchebe.preproc_time:  0.01842784881591797
+bitchebe.preproc_time:  0.018038034439086914
+bitchebe.preproc_time:  0.018850088119506836
+bitchebe.preproc_time:  0.018102645874023438
+bitchebe.preproc_time:  0.018401384353637695
+bitchebe.preproc_time:  0.0181882381439209
+bitchebe.preproc_time:  0.018313884735107422
+bitchebe.preproc_time:  0.018319129943847656
+bitchebe.preproc_time:  0.01802849769592285
+bitchebe.preproc_time:  0.018069744110107422
+bitchebe.preproc_time:  0.01910710334777832
+bitchebe.preproc_time:  0.017477750778198242
+bitchebe.preproc_time:  0.01868891716003418
+bitchebe.preproc_time:  0.01913166046142578
+bitchebe.preproc_time:  0.018686294555664062
+bitchebe.preproc_time:  0.017730236053466797
+bitchebe.preproc_time:  0.0179901123046875
+bitchebe.preproc_time:  0.018535375595092773
+bitchebe.preproc_time:  0.01887059211730957
+bitchebe.preproc_time:  0.018658876419067383
+bitchebe.preproc_time:  0.01733541488647461
+DLL 2023-11-20 15:30:07.683797 - epoch    1 | iter   19/27 | loss   28.30 | utts/s    34 | took 30.35 s | train_grad-norm :  0.0 | train_seq-len-min :  66 | train_seq-len-max :  630 | lrate 2.86e-03
+bitchebe.preproc_time:  0.00016379356384277344
+bitchebe.preproc_time:  0.019634485244750977
+bitchebe.preproc_time:  0.018022775650024414
+bitchebe.preproc_time:  0.018449068069458008
+bitchebe.preproc_time:  0.018867969512939453
+bitchebe.preproc_time:  0.018632888793945312
+bitchebe.preproc_time:  0.017859458923339844
+bitchebe.preproc_time:  0.01923680305480957
+bitchebe.preproc_time:  0.017943859100341797
+bitchebe.preproc_time:  0.01760578155517578
+bitchebe.preproc_time:  0.017670631408691406
+bitchebe.preproc_time:  0.01857900619506836
+bitchebe.preproc_time:  0.01774740219116211
+bitchebe.preproc_time:  0.01828765869140625
+bitchebe.preproc_time:  0.018667936325073242
+bitchebe.preproc_time:  0.018793582916259766
+bitchebe.preproc_time:  0.018729686737060547
+bitchebe.preproc_time:  0.018837928771972656
+bitchebe.preproc_time:  0.018752574920654297
+bitchebe.preproc_time:  0.018079519271850586
+bitchebe.preproc_time:  0.018437862396240234
+bitchebe.preproc_time:  0.018471479415893555
+bitchebe.preproc_time:  0.019277095794677734
+bitchebe.preproc_time:  0.018033742904663086
+bitchebe.preproc_time:  0.01912093162536621
+bitchebe.preproc_time:  0.019582509994506836
+bitchebe.preproc_time:  0.020383596420288086
+bitchebe.preproc_time:  0.018870830535888672
+bitchebe.preproc_time:  0.01847219467163086
+bitchebe.preproc_time:  0.018635988235473633
+bitchebe.preproc_time:  0.018670320510864258
+bitchebe.preproc_time:  0.018805742263793945
+bitchebe.preproc_time:  0.018703460693359375
+bitchebe.preproc_time:  0.01843118667602539
+bitchebe.preproc_time:  0.0192718505859375
+bitchebe.preproc_time:  0.01848578453063965
+bitchebe.preproc_time:  0.019574642181396484
+bitchebe.preproc_time:  0.017775535583496094
+bitchebe.preproc_time:  0.019413471221923828
+bitchebe.preproc_time:  0.01846146583557129
+bitchebe.preproc_time:  0.019889354705810547
+bitchebe.preproc_time:  0.0177309513092041
+bitchebe.preproc_time:  0.01902318000793457
+bitchebe.preproc_time:  0.018710851669311523
+bitchebe.preproc_time:  0.019735097885131836
+bitchebe.preproc_time:  0.020030975341796875
+bitchebe.preproc_time:  0.02001500129699707
+bitchebe.preproc_time:  0.018077373504638672
+bitchebe.preproc_time:  0.019707202911376953
+bitchebe.preproc_time:  0.02010202407836914
+bitchebe.preproc_time:  0.01958608627319336
+bitchebe.preproc_time:  0.020054340362548828
+bitchebe.preproc_time:  0.01883721351623535
+bitchebe.preproc_time:  0.019277095794677734
+bitchebe.preproc_time:  0.020066499710083008
+bitchebe.preproc_time:  0.01926708221435547
+bitchebe.preproc_time:  0.018477439880371094
+bitchebe.preproc_time:  0.017811298370361328
+bitchebe.preproc_time:  0.01955723762512207
+bitchebe.preproc_time:  0.02016472816467285
+bitchebe.preproc_time:  0.01887965202331543
+bitchebe.preproc_time:  0.01681828498840332
+bitchebe.preproc_time:  0.019961833953857422
+bitchebe.preproc_time:  0.01788806915283203
+bitchebe.preproc_time:  0.020117998123168945
+DLL 2023-11-20 15:30:37.281648 - epoch    1 | iter   20/27 | loss   16.93 | utts/s    35 | took 29.52 s | train_grad-norm :  0.0 | train_seq-len-min :  64 | train_seq-len-max :  621 | lrate 3.00e-03
+bitchebe.preproc_time:  0.00047707557678222656
+bitchebe.preproc_time:  0.020314693450927734
+bitchebe.preproc_time:  0.01922297477722168
+bitchebe.preproc_time:  0.020607709884643555
+bitchebe.preproc_time:  0.020129919052124023
+bitchebe.preproc_time:  0.02006077766418457
+bitchebe.preproc_time:  0.02002096176147461
+bitchebe.preproc_time:  0.020111083984375
+bitchebe.preproc_time:  0.015652894973754883
+bitchebe.preproc_time:  0.015532732009887695
+bitchebe.preproc_time:  0.018631696701049805
+bitchebe.preproc_time:  0.01623821258544922
+bitchebe.preproc_time:  0.015405654907226562
+bitchebe.preproc_time:  0.015808582305908203
+bitchebe.preproc_time:  0.015796661376953125
+bitchebe.preproc_time:  0.015916824340820312
+bitchebe.preproc_time:  0.016178369522094727
+bitchebe.preproc_time:  0.016293764114379883
+bitchebe.preproc_time:  0.01680755615234375
+bitchebe.preproc_time:  0.01692652702331543
+bitchebe.preproc_time:  0.016194820404052734
+bitchebe.preproc_time:  0.01616978645324707
+bitchebe.preproc_time:  0.016038894653320312
+bitchebe.preproc_time:  0.016490697860717773
+bitchebe.preproc_time:  0.015195369720458984
+bitchebe.preproc_time:  0.015986204147338867
+bitchebe.preproc_time:  0.015198230743408203
+bitchebe.preproc_time:  0.015386104583740234
+bitchebe.preproc_time:  0.015079021453857422
+bitchebe.preproc_time:  0.015583276748657227
+bitchebe.preproc_time:  0.016162395477294922
+bitchebe.preproc_time:  0.01544189453125
+bitchebe.preproc_time:  0.015658855438232422
+bitchebe.preproc_time:  0.014955997467041016
+bitchebe.preproc_time:  0.015245199203491211
+bitchebe.preproc_time:  0.015712976455688477
+bitchebe.preproc_time:  0.01612377166748047
+bitchebe.preproc_time:  0.01639556884765625
+bitchebe.preproc_time:  0.016216278076171875
+bitchebe.preproc_time:  0.01637125015258789
+bitchebe.preproc_time:  0.016207456588745117
+bitchebe.preproc_time:  0.016081571578979492
+bitchebe.preproc_time:  0.015797138214111328
+bitchebe.preproc_time:  0.015883922576904297
+bitchebe.preproc_time:  0.01609349250793457
+bitchebe.preproc_time:  0.015842199325561523
+bitchebe.preproc_time:  0.016182899475097656
+bitchebe.preproc_time:  0.01621246337890625
+bitchebe.preproc_time:  0.016040325164794922
+bitchebe.preproc_time:  0.015691041946411133
+bitchebe.preproc_time:  0.016264677047729492
+bitchebe.preproc_time:  0.015760421752929688
+bitchebe.preproc_time:  0.015555858612060547
+bitchebe.preproc_time:  0.016132116317749023
+bitchebe.preproc_time:  0.016274213790893555
+bitchebe.preproc_time:  0.015816926956176758
+bitchebe.preproc_time:  0.016155719757080078
+bitchebe.preproc_time:  0.01573920249938965
+bitchebe.preproc_time:  0.01590585708618164
+bitchebe.preproc_time:  0.016004562377929688
+bitchebe.preproc_time:  0.015609979629516602
+bitchebe.preproc_time:  0.016132831573486328
+bitchebe.preproc_time:  0.015731096267700195
+bitchebe.preproc_time:  0.015618085861206055
+bitchebe.preproc_time:  0.016202688217163086
+DLL 2023-11-20 15:31:07.789490 - epoch    1 | iter   21/27 | loss   27.01 | utts/s    34 | took 30.43 s | train_grad-norm :  0.0 | train_seq-len-min :  60 | train_seq-len-max :  629 | lrate 3.14e-03
+bitchebe.preproc_time:  0.00023603439331054688
+bitchebe.preproc_time:  0.017611026763916016
+bitchebe.preproc_time:  0.01622796058654785
+bitchebe.preproc_time:  0.01667952537536621
+bitchebe.preproc_time:  0.016442060470581055
+bitchebe.preproc_time:  0.01593327522277832
+bitchebe.preproc_time:  0.016476154327392578
+bitchebe.preproc_time:  0.01582503318786621
+bitchebe.preproc_time:  0.015516042709350586
+bitchebe.preproc_time:  0.017570972442626953
+bitchebe.preproc_time:  0.015706300735473633
+bitchebe.preproc_time:  0.01662158966064453
+bitchebe.preproc_time:  0.016102075576782227
+bitchebe.preproc_time:  0.017643451690673828
+bitchebe.preproc_time:  0.01542806625366211
+bitchebe.preproc_time:  0.01645183563232422
+bitchebe.preproc_time:  0.01613759994506836
+bitchebe.preproc_time:  0.018014907836914062
+bitchebe.preproc_time:  0.015776395797729492
+bitchebe.preproc_time:  0.01613330841064453
+bitchebe.preproc_time:  0.01860833168029785
+bitchebe.preproc_time:  0.01715397834777832
+bitchebe.preproc_time:  0.016631603240966797
+bitchebe.preproc_time:  0.0167238712310791
+bitchebe.preproc_time:  0.016728639602661133
+bitchebe.preproc_time:  0.017623186111450195
+bitchebe.preproc_time:  0.01663517951965332
+bitchebe.preproc_time:  0.016138076782226562
+bitchebe.preproc_time:  0.016381502151489258
+bitchebe.preproc_time:  0.0158078670501709
+bitchebe.preproc_time:  0.01660442352294922
+bitchebe.preproc_time:  0.015861988067626953
+bitchebe.preproc_time:  0.016606807708740234
+bitchebe.preproc_time:  0.016501188278198242
+bitchebe.preproc_time:  0.015688419342041016
+bitchebe.preproc_time:  0.015827655792236328
+bitchebe.preproc_time:  0.01652073860168457
+bitchebe.preproc_time:  0.01653909683227539
+bitchebe.preproc_time:  0.01588606834411621
+bitchebe.preproc_time:  0.01644611358642578
+bitchebe.preproc_time:  0.018192052841186523
+bitchebe.preproc_time:  0.01614856719970703
+bitchebe.preproc_time:  0.01608443260192871
+bitchebe.preproc_time:  0.016617298126220703
+bitchebe.preproc_time:  0.01621532440185547
+bitchebe.preproc_time:  0.01663064956665039
+bitchebe.preproc_time:  0.016399383544921875
+bitchebe.preproc_time:  0.016094446182250977
+bitchebe.preproc_time:  0.016285181045532227
+bitchebe.preproc_time:  0.016697406768798828
+bitchebe.preproc_time:  0.014906167984008789
+bitchebe.preproc_time:  0.01632237434387207
+bitchebe.preproc_time:  0.016348838806152344
+bitchebe.preproc_time:  0.01614975929260254
+bitchebe.preproc_time:  0.016088008880615234
+bitchebe.preproc_time:  0.01699233055114746
+bitchebe.preproc_time:  0.01683783531188965
+bitchebe.preproc_time:  0.01599907875061035
+bitchebe.preproc_time:  0.01661515235900879
+bitchebe.preproc_time:  0.015900611877441406
+bitchebe.preproc_time:  0.016878366470336914
+bitchebe.preproc_time:  0.016715526580810547
+bitchebe.preproc_time:  0.016742467880249023
+bitchebe.preproc_time:  0.0160067081451416
+bitchebe.preproc_time:  0.016222000122070312
+DLL 2023-11-20 15:31:38.787864 - epoch    1 | iter   22/27 | loss   27.62 | utts/s    33 | took 30.92 s | train_grad-norm :  0.0 | train_seq-len-min :  57 | train_seq-len-max :  620 | lrate 3.29e-03
+bitchebe.preproc_time:  0.00017070770263671875
+bitchebe.preproc_time:  0.030646085739135742
+bitchebe.preproc_time:  0.02177882194519043
+bitchebe.preproc_time:  0.0227353572845459
+bitchebe.preproc_time:  0.02265024185180664
+bitchebe.preproc_time:  0.02232050895690918
+bitchebe.preproc_time:  0.02267909049987793
+bitchebe.preproc_time:  0.022845029830932617
+bitchebe.preproc_time:  0.02306342124938965
+bitchebe.preproc_time:  0.02310776710510254
+bitchebe.preproc_time:  0.022710323333740234
+bitchebe.preproc_time:  0.02289104461669922
+bitchebe.preproc_time:  0.02298712730407715
+bitchebe.preproc_time:  0.02261066436767578
+bitchebe.preproc_time:  0.023059606552124023
+bitchebe.preproc_time:  0.02303767204284668
+bitchebe.preproc_time:  0.023495197296142578
+bitchebe.preproc_time:  0.023112058639526367
+bitchebe.preproc_time:  0.022891998291015625
+bitchebe.preproc_time:  0.022325992584228516
+bitchebe.preproc_time:  0.022258996963500977
+bitchebe.preproc_time:  0.021914243698120117
+bitchebe.preproc_time:  0.02213454246520996
+bitchebe.preproc_time:  0.024775028228759766
+bitchebe.preproc_time:  0.018623828887939453
+bitchebe.preproc_time:  0.01855945587158203
+bitchebe.preproc_time:  0.019785404205322266
+bitchebe.preproc_time:  0.018784523010253906
+bitchebe.preproc_time:  0.01904916763305664
+bitchebe.preproc_time:  0.018943071365356445
+bitchebe.preproc_time:  0.019194841384887695
+bitchebe.preproc_time:  0.01865673065185547
+bitchebe.preproc_time:  0.01907825469970703
+bitchebe.preproc_time:  0.018878936767578125
+bitchebe.preproc_time:  0.019002676010131836
+bitchebe.preproc_time:  0.01898813247680664
+bitchebe.preproc_time:  0.01908254623413086
+bitchebe.preproc_time:  0.018933534622192383
+bitchebe.preproc_time:  0.01887226104736328
+bitchebe.preproc_time:  0.018928050994873047
+bitchebe.preproc_time:  0.018808603286743164
+bitchebe.preproc_time:  0.01886892318725586
+bitchebe.preproc_time:  0.019126415252685547
+bitchebe.preproc_time:  0.018921375274658203
+bitchebe.preproc_time:  0.017241477966308594
+bitchebe.preproc_time:  0.01793050765991211
+bitchebe.preproc_time:  0.01870250701904297
+bitchebe.preproc_time:  0.01783585548400879
+bitchebe.preproc_time:  0.018932342529296875
+bitchebe.preproc_time:  0.019033432006835938
+bitchebe.preproc_time:  0.019161462783813477
+bitchebe.preproc_time:  0.0197756290435791
+bitchebe.preproc_time:  0.019044160842895508
+bitchebe.preproc_time:  0.019206762313842773
+bitchebe.preproc_time:  0.018366098403930664
+bitchebe.preproc_time:  0.018918752670288086
+bitchebe.preproc_time:  0.019368648529052734
+bitchebe.preproc_time:  0.01911306381225586
+bitchebe.preproc_time:  0.0193479061126709
+bitchebe.preproc_time:  0.019387006759643555
+bitchebe.preproc_time:  0.018993377685546875
+bitchebe.preproc_time:  0.019311189651489258
+bitchebe.preproc_time:  0.01851058006286621
+bitchebe.preproc_time:  0.01869678497314453
+bitchebe.preproc_time:  0.019145965576171875
+DLL 2023-11-20 15:32:10.236830 - epoch    1 | iter   23/27 | loss   15.05 | utts/s    33 | took 31.36 s | train_grad-norm :  0.0 | train_seq-len-min :  60 | train_seq-len-max :  623 | lrate 3.43e-03
+bitchebe.preproc_time:  0.0002627372741699219
+bitchebe.preproc_time:  0.020059823989868164
+bitchebe.preproc_time:  0.01893782615661621
+bitchebe.preproc_time:  0.019603729248046875
+bitchebe.preproc_time:  0.018666744232177734
+bitchebe.preproc_time:  0.0191652774810791
+bitchebe.preproc_time:  0.019272327423095703
+bitchebe.preproc_time:  0.019484519958496094
+bitchebe.preproc_time:  0.019677400588989258
+bitchebe.preproc_time:  0.019381999969482422
+bitchebe.preproc_time:  0.018460988998413086
+bitchebe.preproc_time:  0.01877307891845703
+bitchebe.preproc_time:  0.018752336502075195
+bitchebe.preproc_time:  0.019783496856689453
+bitchebe.preproc_time:  0.019639968872070312
+bitchebe.preproc_time:  0.019039154052734375
+bitchebe.preproc_time:  0.01885533332824707
+bitchebe.preproc_time:  0.018891096115112305
+bitchebe.preproc_time:  0.018944740295410156
+bitchebe.preproc_time:  0.01895308494567871
+bitchebe.preproc_time:  0.01946878433227539
+bitchebe.preproc_time:  0.019576549530029297
+bitchebe.preproc_time:  0.018964529037475586
+bitchebe.preproc_time:  0.01862931251525879
+bitchebe.preproc_time:  0.01924276351928711
+bitchebe.preproc_time:  0.019031286239624023
+bitchebe.preproc_time:  0.01896357536315918
+bitchebe.preproc_time:  0.018426179885864258
+bitchebe.preproc_time:  0.019429445266723633
+bitchebe.preproc_time:  0.019673824310302734
+bitchebe.preproc_time:  0.018785715103149414
+bitchebe.preproc_time:  0.019417285919189453
+bitchebe.preproc_time:  0.01905202865600586
+bitchebe.preproc_time:  0.019343852996826172
+bitchebe.preproc_time:  0.018992185592651367
+bitchebe.preproc_time:  0.01971435546875
+bitchebe.preproc_time:  0.019179105758666992
+bitchebe.preproc_time:  0.01958632469177246
+bitchebe.preproc_time:  0.01923060417175293
+bitchebe.preproc_time:  0.01928424835205078
+bitchebe.preproc_time:  0.0190122127532959
+bitchebe.preproc_time:  0.01889181137084961
+bitchebe.preproc_time:  0.01649928092956543
+bitchebe.preproc_time:  0.017703533172607422
+bitchebe.preproc_time:  0.017919540405273438
+bitchebe.preproc_time:  0.017229795455932617
+bitchebe.preproc_time:  0.017314434051513672
+bitchebe.preproc_time:  0.017656326293945312
+bitchebe.preproc_time:  0.017833232879638672
+bitchebe.preproc_time:  0.017462491989135742
+bitchebe.preproc_time:  0.017893552780151367
+bitchebe.preproc_time:  0.01662445068359375
+bitchebe.preproc_time:  0.018121957778930664
+bitchebe.preproc_time:  0.01766204833984375
+bitchebe.preproc_time:  0.017223596572875977
+bitchebe.preproc_time:  0.01702713966369629
+bitchebe.preproc_time:  0.017217159271240234
+bitchebe.preproc_time:  0.017850160598754883
+bitchebe.preproc_time:  0.019294023513793945
+bitchebe.preproc_time:  0.019661426544189453
+bitchebe.preproc_time:  0.018519163131713867
+bitchebe.preproc_time:  0.01839470863342285
+bitchebe.preproc_time:  0.01880335807800293
+bitchebe.preproc_time:  0.017671585083007812
+bitchebe.preproc_time:  0.01788616180419922
+DLL 2023-11-20 15:32:40.835160 - epoch    1 | iter   24/27 | loss   29.25 | utts/s    34 | took 30.52 s | train_grad-norm :  0.0 | train_seq-len-min :  54 | train_seq-len-max :  629 | lrate 3.57e-03
+bitchebe.preproc_time:  0.0003559589385986328
+bitchebe.preproc_time:  0.018733501434326172
+bitchebe.preproc_time:  0.01720571517944336
+bitchebe.preproc_time:  0.017499208450317383
+bitchebe.preproc_time:  0.01708364486694336
+bitchebe.preproc_time:  0.01753830909729004
+bitchebe.preproc_time:  0.017569303512573242
+bitchebe.preproc_time:  0.018070697784423828
+bitchebe.preproc_time:  0.017320632934570312
+bitchebe.preproc_time:  0.01789236068725586
+bitchebe.preproc_time:  0.017506122589111328
+bitchebe.preproc_time:  0.017302274703979492
+bitchebe.preproc_time:  0.0181732177734375
+bitchebe.preproc_time:  0.01919865608215332
+bitchebe.preproc_time:  0.01767706871032715
+bitchebe.preproc_time:  0.018021106719970703
+bitchebe.preproc_time:  0.017353296279907227
+bitchebe.preproc_time:  0.01782512664794922
+bitchebe.preproc_time:  0.018349647521972656
+bitchebe.preproc_time:  0.018146514892578125
+bitchebe.preproc_time:  0.01789569854736328
+bitchebe.preproc_time:  0.01828455924987793
+bitchebe.preproc_time:  0.01806473731994629
+bitchebe.preproc_time:  0.01827836036682129
+bitchebe.preproc_time:  0.01809382438659668
+bitchebe.preproc_time:  0.017275571823120117
+bitchebe.preproc_time:  0.01796245574951172
+bitchebe.preproc_time:  0.01775050163269043
+bitchebe.preproc_time:  0.017639636993408203
+bitchebe.preproc_time:  0.017925262451171875
+bitchebe.preproc_time:  0.016446828842163086
+bitchebe.preproc_time:  0.017605066299438477
+bitchebe.preproc_time:  0.017109155654907227
+bitchebe.preproc_time:  0.01717662811279297
+bitchebe.preproc_time:  0.016655921936035156
+bitchebe.preproc_time:  0.017253398895263672
+bitchebe.preproc_time:  0.017049312591552734
+bitchebe.preproc_time:  0.018060922622680664
+bitchebe.preproc_time:  0.017615556716918945
+bitchebe.preproc_time:  0.01747441291809082
+bitchebe.preproc_time:  0.016582489013671875
+bitchebe.preproc_time:  0.017467737197875977
+bitchebe.preproc_time:  0.01793837547302246
+bitchebe.preproc_time:  0.01771998405456543
+bitchebe.preproc_time:  0.01737833023071289
+bitchebe.preproc_time:  0.017253637313842773
+bitchebe.preproc_time:  0.01790022850036621
+bitchebe.preproc_time:  0.01715850830078125
+bitchebe.preproc_time:  0.017646312713623047
+bitchebe.preproc_time:  0.016342878341674805
+bitchebe.preproc_time:  0.017555713653564453
+bitchebe.preproc_time:  0.01759195327758789
+bitchebe.preproc_time:  0.017626285552978516
+bitchebe.preproc_time:  0.0162198543548584
+bitchebe.preproc_time:  0.015521764755249023
+bitchebe.preproc_time:  0.01632857322692871
+bitchebe.preproc_time:  0.016689062118530273
+bitchebe.preproc_time:  0.016232728958129883
+bitchebe.preproc_time:  0.016344785690307617
+bitchebe.preproc_time:  0.016783952713012695
+bitchebe.preproc_time:  0.015692472457885742
+bitchebe.preproc_time:  0.016257286071777344
+bitchebe.preproc_time:  0.015932083129882812
+bitchebe.preproc_time:  0.01622152328491211
+bitchebe.preproc_time:  0.01637744903564453
+DLL 2023-11-20 15:33:12.154316 - epoch    1 | iter   25/27 | loss   30.76 | utts/s    33 | took 31.24 s | train_grad-norm :  0.0 | train_seq-len-min :  62 | train_seq-len-max :  632 | lrate 3.71e-03
+bitchebe.preproc_time:  0.000148773193359375
+bitchebe.preproc_time:  0.01745462417602539
+bitchebe.preproc_time:  0.015384912490844727
+bitchebe.preproc_time:  0.016225576400756836
+bitchebe.preproc_time:  0.01520991325378418
+bitchebe.preproc_time:  0.016100168228149414
+bitchebe.preproc_time:  0.015866518020629883
+bitchebe.preproc_time:  0.015354633331298828
+bitchebe.preproc_time:  0.015582561492919922
+bitchebe.preproc_time:  0.014976024627685547
+bitchebe.preproc_time:  0.016312599182128906
+bitchebe.preproc_time:  0.01630568504333496
+bitchebe.preproc_time:  0.01677870750427246
+bitchebe.preproc_time:  0.01637411117553711
+bitchebe.preproc_time:  0.016072511672973633
+bitchebe.preproc_time:  0.015885591506958008
+bitchebe.preproc_time:  0.016036510467529297
+bitchebe.preproc_time:  0.01618671417236328
+bitchebe.preproc_time:  0.01609325408935547
+bitchebe.preproc_time:  0.016707897186279297
+bitchebe.preproc_time:  0.0162506103515625
+bitchebe.preproc_time:  0.01643967628479004
+bitchebe.preproc_time:  0.016262054443359375
+bitchebe.preproc_time:  0.016115903854370117
+bitchebe.preproc_time:  0.016098976135253906
+bitchebe.preproc_time:  0.01584172248840332
+bitchebe.preproc_time:  0.016282320022583008
+bitchebe.preproc_time:  0.016465425491333008
+bitchebe.preproc_time:  0.015543699264526367
+bitchebe.preproc_time:  0.01547384262084961
+bitchebe.preproc_time:  0.015459775924682617
+bitchebe.preproc_time:  0.015811681747436523
+bitchebe.preproc_time:  0.018683910369873047
+bitchebe.preproc_time:  0.01664257049560547
+bitchebe.preproc_time:  0.016277313232421875
+bitchebe.preproc_time:  0.015633344650268555
+bitchebe.preproc_time:  0.016867876052856445
+bitchebe.preproc_time:  0.016764163970947266
+bitchebe.preproc_time:  0.016805171966552734
+bitchebe.preproc_time:  0.01591801643371582
+bitchebe.preproc_time:  0.016295433044433594
+bitchebe.preproc_time:  0.015482902526855469
+bitchebe.preproc_time:  0.0158078670501709
+bitchebe.preproc_time:  0.016133785247802734
+bitchebe.preproc_time:  0.019036531448364258
+bitchebe.preproc_time:  0.01640796661376953
+bitchebe.preproc_time:  0.016241073608398438
+bitchebe.preproc_time:  0.01678943634033203
+bitchebe.preproc_time:  0.01675558090209961
+bitchebe.preproc_time:  0.015848159790039062
+bitchebe.preproc_time:  0.016262531280517578
+bitchebe.preproc_time:  0.016102075576782227
+bitchebe.preproc_time:  0.018316984176635742
+bitchebe.preproc_time:  0.015560626983642578
+bitchebe.preproc_time:  0.016329050064086914
+bitchebe.preproc_time:  0.018430233001708984
+bitchebe.preproc_time:  0.016142606735229492
+bitchebe.preproc_time:  0.015635013580322266
+bitchebe.preproc_time:  0.015592336654663086
+bitchebe.preproc_time:  0.016377925872802734
+bitchebe.preproc_time:  0.01572585105895996
+bitchebe.preproc_time:  0.01551055908203125
+bitchebe.preproc_time:  0.016348600387573242
+bitchebe.preproc_time:  0.015842437744140625
+bitchebe.preproc_time:  0.01653289794921875
+DLL 2023-11-20 15:33:43.021255 - epoch    1 | iter   26/27 | loss   30.51 | utts/s    33 | took 30.79 s | train_grad-norm :  0.0 | train_seq-len-min :  54 | train_seq-len-max :  633 | lrate 3.86e-03
+bitchebe.preproc_time:  0.0002117156982421875
+bitchebe.preproc_time:  0.017525911331176758
+bitchebe.preproc_time:  0.01619124412536621
+bitchebe.preproc_time:  0.015337944030761719
+bitchebe.preproc_time:  0.015613794326782227
+bitchebe.preproc_time:  0.01655864715576172
+bitchebe.preproc_time:  0.016350507736206055
+bitchebe.preproc_time:  0.015641212463378906
+bitchebe.preproc_time:  0.01635265350341797
+bitchebe.preproc_time:  0.016536951065063477
+bitchebe.preproc_time:  0.015708208084106445
+bitchebe.preproc_time:  0.016216754913330078
+bitchebe.preproc_time:  0.015360355377197266
+bitchebe.preproc_time:  0.015571117401123047
+bitchebe.preproc_time:  0.016161441802978516
+bitchebe.preproc_time:  0.016445636749267578
+bitchebe.preproc_time:  0.01628398895263672
+bitchebe.preproc_time:  0.016379356384277344
+bitchebe.preproc_time:  0.015527009963989258
+bitchebe.preproc_time:  0.014994382858276367
+bitchebe.preproc_time:  0.016375303268432617
+bitchebe.preproc_time:  0.014876365661621094
+bitchebe.preproc_time:  0.016067981719970703
+bitchebe.preproc_time:  0.016359329223632812
+bitchebe.preproc_time:  0.016735553741455078
+bitchebe.preproc_time:  0.0164492130279541
+bitchebe.preproc_time:  0.01683807373046875
+bitchebe.preproc_time:  0.0164949893951416
+bitchebe.preproc_time:  0.015570878982543945
+bitchebe.preproc_time:  0.01544809341430664
+bitchebe.preproc_time:  0.01672077178955078
+bitchebe.preproc_time:  0.01861095428466797
+bitchebe.preproc_time:  0.014992952346801758
+bitchebe.preproc_time:  0.01626729965209961
+bitchebe.preproc_time:  0.015497684478759766
+bitchebe.preproc_time:  0.016509056091308594
+bitchebe.preproc_time:  0.01645970344543457
+bitchebe.preproc_time:  0.01733875274658203
+bitchebe.preproc_time:  0.016883373260498047
+bitchebe.preproc_time:  0.01744675636291504
+bitchebe.preproc_time:  0.016324281692504883
+bitchebe.preproc_time:  0.01681375503540039
+bitchebe.preproc_time:  0.017364025115966797
+bitchebe.preproc_time:  0.016333580017089844
+bitchebe.preproc_time:  0.02411365509033203
+bitchebe.preproc_time:  0.016751527786254883
+bitchebe.preproc_time:  0.016907691955566406
+bitchebe.preproc_time:  0.016738414764404297
+bitchebe.preproc_time:  0.01675128936767578
+bitchebe.preproc_time:  0.016776084899902344
+bitchebe.preproc_time:  0.016659259796142578
+bitchebe.preproc_time:  0.01709127426147461
+bitchebe.preproc_time:  0.016623735427856445
+bitchebe.preproc_time:  0.016547441482543945
+bitchebe.preproc_time:  0.01865983009338379
+bitchebe.preproc_time:  0.015961170196533203
+bitchebe.preproc_time:  0.017030000686645508
+bitchebe.preproc_time:  0.017119169235229492
+bitchebe.preproc_time:  0.0165560245513916
+bitchebe.preproc_time:  0.018052339553833008
+bitchebe.preproc_time:  0.01772141456604004
+bitchebe.preproc_time:  0.01856088638305664
+bitchebe.preproc_time:  0.017830371856689453
+bitchebe.preproc_time:  0.01982593536376953
+bitchebe.preproc_time:  0.01917243003845215
+DLL 2023-11-20 15:34:14.100430 - epoch    1 | iter   27/27 | loss   23.78 | utts/s    33 | took 31.01 s | train_grad-norm :  0.0 | train_seq-len-min :  66 | train_seq-len-max :  622 | lrate 4.00e-03
+:::MLLOG {"namespace": "", "time_ms": 1700494454100, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 519, "epoch_num": 1}}
+DLL 2023-11-20 15:34:14.102452 - epoch    1 | avg train utts/s    33 | took 835.17 s
+:::MLLOG {"namespace": "", "time_ms": 1700494454102, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 156, "epoch_num": 1}}
+val evaluation:          0/338       val evaluation:          1/338       val evaluation:          2/338       val evaluation:          3/338       val evaluation:          4/338       val evaluation:          5/338       val evaluation:          6/338       val evaluation:          7/338       val evaluation:          8/338       val evaluation:          9/338       val evaluation:         10/338       val evaluation:         11/338       val evaluation:         12/338       val evaluation:         13/338       val evaluation:         14/338       val evaluation:         15/338       val evaluation:         16/338       val evaluation:         17/338       val evaluation:         18/338       val evaluation:         19/338       val evaluation:         20/338       val evaluation:         21/338       val evaluation:         22/338       val evaluation:         23/338       val evaluation:         24/338       val evaluation:         25/338       val evaluation:         26/338       val evaluation:         27/338       val evaluation:         28/338       val evaluation:         29/338       val evaluation:         30/338       val evaluation:         31/338       val evaluation:         32/338       val evaluation:         33/338       val evaluation:         34/338       val evaluation:         35/338       val evaluation:         36/338       val evaluation:         37/338       val evaluation:         38/338       val evaluation:         39/338       val evaluation:         40/338       val evaluation:         41/338       val evaluation:         42/338       val evaluation:         43/338       val evaluation:         44/338       val evaluation:         45/338       val evaluation:         46/338       val evaluation:         47/338       val evaluation:         48/338       val evaluation:         49/338       val evaluation:         50/338       val evaluation:         51/338       val evaluation:         52/338       val evaluation:         53/338       val evaluation:         54/338       val evaluation:         55/338       val evaluation:         56/338       val evaluation:         57/338       val evaluation:         58/338       val evaluation:         59/338       val evaluation:         60/338       val evaluation:         61/338       val evaluation:         62/338       val evaluation:         63/338       val evaluation:         64/338       val evaluation:         65/338       val evaluation:         66/338       val evaluation:         67/338       val evaluation:         68/338       val evaluation:         69/338       val evaluation:         70/338       val evaluation:         71/338       val evaluation:         72/338       val evaluation:         73/338       val evaluation:         74/338       val evaluation:         75/338       val evaluation:         76/338       val evaluation:         77/338       val evaluation:         78/338       val evaluation:         79/338       val evaluation:         80/338       val evaluation:         81/338       val evaluation:         82/338       val evaluation:         83/338       val evaluation:         84/338       val evaluation:         85/338       val evaluation:         86/338       val evaluation:         87/338       val evaluation:         88/338       val evaluation:         89/338       val evaluation:         90/338       val evaluation:         91/338       val evaluation:         92/338       val evaluation:         93/338       val evaluation:         94/338       val evaluation:         95/338       val evaluation:         96/338       val evaluation:         97/338       val evaluation:         98/338       val evaluation:         99/338       val evaluation:        100/338       val evaluation:        101/338       val evaluation:        102/338       val evaluation:        103/338       val evaluation:        104/338       val evaluation:        105/338       val evaluation:        106/338       val evaluation:        107/338       val evaluation:        108/338       val evaluation:        109/338       val evaluation:        110/338       val evaluation:        111/338       val evaluation:        112/338       val evaluation:        113/338       val evaluation:        114/338       val evaluation:        115/338       val evaluation:        116/338       val evaluation:        117/338       val evaluation:        118/338       val evaluation:        119/338       val evaluation:        120/338       val evaluation:        121/338       val evaluation:        122/338       val evaluation:        123/338       val evaluation:        124/338       val evaluation:        125/338       val evaluation:        126/338       val evaluation:        127/338       val evaluation:        128/338       val evaluation:        129/338       val evaluation:        130/338       val evaluation:        131/338       val evaluation:        132/338       val evaluation:        133/338       val evaluation:        134/338       val evaluation:        135/338       val evaluation:        136/338       val evaluation:        137/338       val evaluation:        138/338       val evaluation:        139/338       val evaluation:        140/338       val evaluation:        141/338       val evaluation:        142/338       val evaluation:        143/338       val evaluation:        144/338       val evaluation:        145/338       val evaluation:        146/338       val evaluation:        147/338       val evaluation:        148/338       val evaluation:        149/338       val evaluation:        150/338       val evaluation:        151/338       val evaluation:        152/338       val evaluation:        153/338       val evaluation:        154/338       val evaluation:        155/338       val evaluation:        156/338       val evaluation:        157/338       val evaluation:        158/338       val evaluation:        159/338       val evaluation:        160/338       val evaluation:        161/338       val evaluation:        162/338       val evaluation:        163/338       val evaluation:        164/338       val evaluation:        165/338       val evaluation:        166/338       val evaluation:        167/338       val evaluation:        168/338       val evaluation:        169/338       val evaluation:        170/338       val evaluation:        171/338       val evaluation:        172/338       val evaluation:        173/338       val evaluation:        174/338       val evaluation:        175/338       val evaluation:        176/338       val evaluation:        177/338       val evaluation:        178/338       val evaluation:        179/338       val evaluation:        180/338       val evaluation:        181/338       val evaluation:        182/338       val evaluation:        183/338       val evaluation:        184/338       val evaluation:        185/338       val evaluation:        186/338       val evaluation:        187/338       val evaluation:        188/338       val evaluation:        189/338       val evaluation:        190/338       val evaluation:        191/338       val evaluation:        192/338       val evaluation:        193/338       val evaluation:        194/338       val evaluation:        195/338       val evaluation:        196/338       val evaluation:        197/338       val evaluation:        198/338       val evaluation:        199/338       val evaluation:        200/338       val evaluation:        201/338       val evaluation:        202/338       val evaluation:        203/338       val evaluation:        204/338       val evaluation:        205/338       val evaluation:        206/338       val evaluation:        207/338       val evaluation:        208/338       val evaluation:        209/338       val evaluation:        210/338       val evaluation:        211/338       val evaluation:        212/338       val evaluation:        213/338       val evaluation:        214/338       val evaluation:        215/338       val evaluation:        216/338       val evaluation:        217/338       val evaluation:        218/338       val evaluation:        219/338       val evaluation:        220/338       val evaluation:        221/338       val evaluation:        222/338       val evaluation:        223/338       val evaluation:        224/338       val evaluation:        225/338       val evaluation:        226/338       val evaluation:        227/338       val evaluation:        228/338       val evaluation:        229/338       val evaluation:        230/338       val evaluation:        231/338       val evaluation:        232/338       val evaluation:        233/338       val evaluation:        234/338       val evaluation:        235/338       val evaluation:        236/338       val evaluation:        237/338       val evaluation:        238/338       val evaluation:        239/338       val evaluation:        240/338       val evaluation:        241/338       val evaluation:        242/338       val evaluation:        243/338       val evaluation:        244/338       val evaluation:        245/338       val evaluation:        246/338       val evaluation:        247/338       val evaluation:        248/338       val evaluation:        249/338       val evaluation:        250/338       val evaluation:        251/338       val evaluation:        252/338       val evaluation:        253/338       val evaluation:        254/338       val evaluation:        255/338       val evaluation:        256/338       val evaluation:        257/338       val evaluation:        258/338       val evaluation:        259/338       val evaluation:        260/338       val evaluation:        261/338       val evaluation:        262/338       val evaluation:        263/338       val evaluation:        264/338       val evaluation:        265/338       val evaluation:        266/338       val evaluation:        267/338       val evaluation:        268/338       val evaluation:        269/338       val evaluation:        270/338       val evaluation:        271/338       val evaluation:        272/338       val evaluation:        273/338       val evaluation:        274/338       val evaluation:        275/338       val evaluation:        276/338       val evaluation:        277/338       val evaluation:        278/338       val evaluation:        279/338       val evaluation:        280/338       val evaluation:        281/338       val evaluation:        282/338       val evaluation:        283/338       val evaluation:        284/338       val evaluation:        285/338       val evaluation:        286/338       val evaluation:        287/338       val evaluation:        288/338       val evaluation:        289/338       val evaluation:        290/338       val evaluation:        291/338       val evaluation:        292/338       val evaluation:        293/338       val evaluation:        294/338       val evaluation:        295/338       val evaluation:        296/338       val evaluation:        297/338       val evaluation:        298/338       val evaluation:        299/338       val evaluation:        300/338       val evaluation:        301/338       val evaluation:        302/338       val evaluation:        303/338       val evaluation:        304/338       val evaluation:        305/338       val evaluation:        306/338       val evaluation:        307/338       val evaluation:        308/338       val evaluation:        309/338       val evaluation:        310/338       val evaluation:        311/338       val evaluation:        312/338       val evaluation:        313/338       val evaluation:        314/338       val evaluation:        315/338       val evaluation:        316/338       val evaluation:        317/338       val evaluation:        318/338       val evaluation:        319/338       val evaluation:        320/338       val evaluation:        321/338       val evaluation:        322/338       val evaluation:        323/338       val evaluation:        324/338       val evaluation:        325/338       val evaluation:        326/338       val evaluation:        327/338       val evaluation:        328/338       val evaluation:        329/338       val evaluation:        330/338       val evaluation:        331/338       val evaluation:        332/338       val evaluation:        333/338       val evaluation:        334/338       val evaluation:        335/338       val evaluation:        336/338       val evaluation:        337/338       :::MLLOG {"namespace": "", "time_ms": 1700495230338, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 16.389967280614684, "metadata": {"file": "train.py", "lineno": 176, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1700495230339, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 177, "epoch_num": 1}}
+DLL 2023-11-20 15:47:10.340403 - epoch    1 |   dev ema loss  986.34 |   dev ema wer 1639.00 | took 776.24 s
+:::MLLOG {"namespace": "", "time_ms": 1700495230342, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 542, "first_epoch_num": 1}}
+DLL 2023-11-20 15:47:10.342260 -  | avg train utts/s    33
+:::MLLOG {"namespace": "", "time_ms": 1700495230342, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 556, "status": "aborted"}}
+:::MLLOG {"namespace": "", "time_ms": 1700495230343, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 156, "epoch_num": 1}}
+val evaluation:          0/338       val evaluation:          1/338       val evaluation:          2/338       val evaluation:          3/338       val evaluation:          4/338       val evaluation:          5/338       val evaluation:          6/338       val evaluation:          7/338       val evaluation:          8/338       val evaluation:          9/338       val evaluation:         10/338       val evaluation:         11/338       val evaluation:         12/338       val evaluation:         13/338       val evaluation:         14/338       val evaluation:         15/338       val evaluation:         16/338       val evaluation:         17/338       val evaluation:         18/338       val evaluation:         19/338       val evaluation:         20/338       val evaluation:         21/338       val evaluation:         22/338       val evaluation:         23/338       val evaluation:         24/338       val evaluation:         25/338       val evaluation:         26/338       val evaluation:         27/338       val evaluation:         28/338       val evaluation:         29/338       val evaluation:         30/338       val evaluation:         31/338       val evaluation:         32/338       val evaluation:         33/338       val evaluation:         34/338       val evaluation:         35/338       val evaluation:         36/338       val evaluation:         37/338       val evaluation:         38/338       val evaluation:         39/338       val evaluation:         40/338       val evaluation:         41/338       val evaluation:         42/338       val evaluation:         43/338       val evaluation:         44/338       val evaluation:         45/338       val evaluation:         46/338       val evaluation:         47/338       val evaluation:         48/338       val evaluation:         49/338       val evaluation:         50/338       val evaluation:         51/338       val evaluation:         52/338       val evaluation:         53/338       val evaluation:         54/338       val evaluation:         55/338       val evaluation:         56/338       val evaluation:         57/338       val evaluation:         58/338       val evaluation:         59/338       val evaluation:         60/338       val evaluation:         61/338       val evaluation:         62/338       val evaluation:         63/338       val evaluation:         64/338       val evaluation:         65/338       val evaluation:         66/338       val evaluation:         67/338       val evaluation:         68/338       val evaluation:         69/338       val evaluation:         70/338       val evaluation:         71/338       val evaluation:         72/338       val evaluation:         73/338       val evaluation:         74/338       val evaluation:         75/338       val evaluation:         76/338       val evaluation:         77/338       val evaluation:         78/338       val evaluation:         79/338       val evaluation:         80/338       val evaluation:         81/338       val evaluation:         82/338       val evaluation:         83/338       val evaluation:         84/338       val evaluation:         85/338       val evaluation:         86/338       val evaluation:         87/338       val evaluation:         88/338       val evaluation:         89/338       val evaluation:         90/338       val evaluation:         91/338       val evaluation:         92/338       val evaluation:         93/338       val evaluation:         94/338       val evaluation:         95/338       val evaluation:         96/338       val evaluation:         97/338       val evaluation:         98/338       val evaluation:         99/338       val evaluation:        100/338       val evaluation:        101/338       val evaluation:        102/338       val evaluation:        103/338       val evaluation:        104/338       val evaluation:        105/338       val evaluation:        106/338       val evaluation:        107/338       val evaluation:        108/338       val evaluation:        109/338       val evaluation:        110/338       val evaluation:        111/338       val evaluation:        112/338       val evaluation:        113/338       val evaluation:        114/338       val evaluation:        115/338       val evaluation:        116/338       val evaluation:        117/338       val evaluation:        118/338       val evaluation:        119/338       val evaluation:        120/338       val evaluation:        121/338       val evaluation:        122/338       val evaluation:        123/338       val evaluation:        124/338       val evaluation:        125/338       val evaluation:        126/338       val evaluation:        127/338       val evaluation:        128/338       val evaluation:        129/338       val evaluation:        130/338       val evaluation:        131/338       val evaluation:        132/338       val evaluation:        133/338       val evaluation:        134/338       val evaluation:        135/338       val evaluation:        136/338       val evaluation:        137/338       val evaluation:        138/338       val evaluation:        139/338       val evaluation:        140/338       val evaluation:        141/338       val evaluation:        142/338       val evaluation:        143/338       val evaluation:        144/338       val evaluation:        145/338       val evaluation:        146/338       val evaluation:        147/338       val evaluation:        148/338       val evaluation:        149/338       val evaluation:        150/338       val evaluation:        151/338       val evaluation:        152/338       val evaluation:        153/338       val evaluation:        154/338       val evaluation:        155/338       val evaluation:        156/338       val evaluation:        157/338       val evaluation:        158/338       val evaluation:        159/338       val evaluation:        160/338       val evaluation:        161/338       val evaluation:        162/338       val evaluation:        163/338       val evaluation:        164/338       val evaluation:        165/338       val evaluation:        166/338       val evaluation:        167/338       val evaluation:        168/338       val evaluation:        169/338       val evaluation:        170/338       val evaluation:        171/338       val evaluation:        172/338       val evaluation:        173/338       val evaluation:        174/338       val evaluation:        175/338       val evaluation:        176/338       val evaluation:        177/338       val evaluation:        178/338       val evaluation:        179/338       val evaluation:        180/338       val evaluation:        181/338       val evaluation:        182/338       val evaluation:        183/338       val evaluation:        184/338       val evaluation:        185/338       val evaluation:        186/338       val evaluation:        187/338       val evaluation:        188/338       val evaluation:        189/338       val evaluation:        190/338       val evaluation:        191/338       val evaluation:        192/338       val evaluation:        193/338       val evaluation:        194/338       val evaluation:        195/338       val evaluation:        196/338       val evaluation:        197/338       val evaluation:        198/338       val evaluation:        199/338       val evaluation:        200/338       val evaluation:        201/338       val evaluation:        202/338       val evaluation:        203/338       val evaluation:        204/338       val evaluation:        205/338       val evaluation:        206/338       val evaluation:        207/338       val evaluation:        208/338       val evaluation:        209/338       val evaluation:        210/338       val evaluation:        211/338       val evaluation:        212/338       val evaluation:        213/338       val evaluation:        214/338       val evaluation:        215/338       val evaluation:        216/338       val evaluation:        217/338       val evaluation:        218/338       val evaluation:        219/338       val evaluation:        220/338       val evaluation:        221/338       val evaluation:        222/338       val evaluation:        223/338       val evaluation:        224/338       val evaluation:        225/338       val evaluation:        226/338       val evaluation:        227/338       val evaluation:        228/338       val evaluation:        229/338       val evaluation:        230/338       val evaluation:        231/338       val evaluation:        232/338       val evaluation:        233/338       val evaluation:        234/338       val evaluation:        235/338       val evaluation:        236/338       val evaluation:        237/338       val evaluation:        238/338       val evaluation:        239/338       val evaluation:        240/338       val evaluation:        241/338       val evaluation:        242/338       val evaluation:        243/338       val evaluation:        244/338       val evaluation:        245/338       val evaluation:        246/338       val evaluation:        247/338       val evaluation:        248/338       val evaluation:        249/338       val evaluation:        250/338       val evaluation:        251/338       val evaluation:        252/338       val evaluation:        253/338       val evaluation:        254/338       val evaluation:        255/338       val evaluation:        256/338       val evaluation:        257/338       val evaluation:        258/338       val evaluation:        259/338       val evaluation:        260/338       val evaluation:        261/338       val evaluation:        262/338       val evaluation:        263/338       val evaluation:        264/338       val evaluation:        265/338       val evaluation:        266/338       val evaluation:        267/338       val evaluation:        268/338       val evaluation:        269/338       val evaluation:        270/338       val evaluation:        271/338       val evaluation:        272/338       val evaluation:        273/338       val evaluation:        274/338       val evaluation:        275/338       val evaluation:        276/338       val evaluation:        277/338       val evaluation:        278/338       val evaluation:        279/338       val evaluation:        280/338       val evaluation:        281/338       val evaluation:        282/338       val evaluation:        283/338       val evaluation:        284/338       val evaluation:        285/338       val evaluation:        286/338       val evaluation:        287/338       val evaluation:        288/338       val evaluation:        289/338       val evaluation:        290/338       val evaluation:        291/338       val evaluation:        292/338       val evaluation:        293/338       val evaluation:        294/338       val evaluation:        295/338       val evaluation:        296/338       val evaluation:        297/338       val evaluation:        298/338       val evaluation:        299/338       val evaluation:        300/338       val evaluation:        301/338       val evaluation:        302/338       val evaluation:        303/338       val evaluation:        304/338       val evaluation:        305/338       val evaluation:        306/338       val evaluation:        307/338       val evaluation:        308/338       val evaluation:        309/338       val evaluation:        310/338       val evaluation:        311/338       val evaluation:        312/338       val evaluation:        313/338       val evaluation:        314/338       val evaluation:        315/338       val evaluation:        316/338       val evaluation:        317/338       val evaluation:        318/338       val evaluation:        319/338       val evaluation:        320/338       val evaluation:        321/338       val evaluation:        322/338       val evaluation:        323/338       val evaluation:        324/338       val evaluation:        325/338       val evaluation:        326/338       val evaluation:        327/338       val evaluation:        328/338       val evaluation:        329/338       val evaluation:        330/338       val evaluation:        331/338       val evaluation:        332/338       val evaluation:        333/338       val evaluation:        334/338       val evaluation:        335/338       val evaluation:        336/338       val evaluation:        337/338       :::MLLOG {"namespace": "", "time_ms": 1700495997910, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 16.389967280614684, "metadata": {"file": "train.py", "lineno": 176, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1700495997911, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 177, "epoch_num": 1}}
+DLL 2023-11-20 15:59:57.912633 - epoch    1 |   dev ema loss  986.34 |   dev ema wer 1639.00 | took 767.57 s
+	Command being timed: "bash scripts/train.sh"
+	User time (seconds): 3394.35
+	System time (seconds): 110.06
+	Percent of CPU this job got: 146%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 39:48.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3641468
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 108
+	Minor (reclaiming a frame) page faults: 2462578
+	Voluntary context switches: 735461
+	Involuntary context switches: 194055
+	Swaps: 0
+	File system inputs: 765680
+	File system outputs: 6048
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
